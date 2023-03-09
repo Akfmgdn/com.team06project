@@ -8,3 +8,5 @@ Feature: US1001 Kullanıcı amazonda test yapar
     And   arama sonuclarini nutalle icerdigini test eder
     Then  sayfayi kapatir
 
+
+
