@@ -16,7 +16,7 @@ public class Driver {
        Driver class'ini SINGLETON PATERN ile duzenleyebiliriz
 
        Bunun icin Driver class'inin parametresiz constructor'ini olusturup
-       access modifier'ini PRIVATE yapmamiz yeterli olur.
+       access modifier'ini PRIVATE yapmamiz yeterli olur. .
      */
 
     private Driver(){
