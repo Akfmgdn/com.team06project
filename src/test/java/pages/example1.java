@@ -1,4 +1,4 @@
 package pages;
 
-public class example1 {//
+public class example1 {///
 }
