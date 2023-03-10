@@ -19,5 +19,13 @@ public class HomePage {
     @FindBy(xpath="(//*[text()='Login'])[1]")
     public WebElement loginLink;
 
+    //https://qa.trendlifebuy.com/>dashboard linki
+    @FindBy(xpath = "(//a[text()='Dashboard'])[1]")
+    public WebElement dashboardLink;
+
+    //https://qa.trendlifebuy.com/profile/dashboard>My Order Linki
+    @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[3]")
+    public WebElement myOrderLink;
+
 
 }
