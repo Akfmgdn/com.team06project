@@ -166,4 +166,11 @@ public class ReusableMethods {
 
     }
 
+
+
+    public static void scrollDownByPixel(int pixel){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0,"+pixel+")", "");
+    }
+
 }
