@@ -148,4 +148,19 @@ public class ReusableMethods {
 
         return element;
     }
+
+    public static void jsClick(WebElement element){
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(30));
+        WebElement clickElement1=wait.until(ExpectedConditions.visibilityOf(element));
+        JavascriptExecutor jse=(JavascriptExecutor)Driver.getDriver();
+        jse.executeScript("arguments[0].click();",element);
+
+    }
+
+    public static void waitAndClick(WebElement element){
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(30));
+        WebElement clickElement1=wait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
+    }
 }
