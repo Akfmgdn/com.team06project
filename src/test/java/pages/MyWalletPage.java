@@ -39,6 +39,21 @@ public class MyWalletPage {
     @FindBy(xpath = "//h4[text()='My Wallet']")
     public WebElement myWalletHeader;
 
+    @FindBy(xpath = "//*[text()='Total Balance']")
+    public WebElement totalBalance;
+
+    @FindBy(xpath = "//*[text()='Running Balance']")
+    public WebElement runningBalance;
+
+    @FindBy(xpath = "//*[text()='Pending Balance']")
+    public WebElement pendingBalance;
+
+    @FindBy(xpath = "//span[text()='Recharge Wallet']")
+    public WebElement rechargeWalletButton;
+
+    @FindBy(xpath = "//h3[text()='Recharge Amount']")
+    public WebElement rechargeAmountWindowHeader;
+
 
 
 }

@@ -13,6 +13,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FarukSteps {
     MyWalletPage myWalletPage = new MyWalletPage();
@@ -61,5 +63,27 @@ public class FarukSteps {
     @And("Close the site")
     public void closeTheSite() {
         Driver.quitDriver();
+    }
+
+    @And("veify that the total balance running balance and Pending balance are visible")
+    public void veifyThatTheTotalBalanceRunningBalanceAndPendingBalanceAreVisible() {
+        ReusableMethods.scrollDownByPixel(200);
+        List<WebElement> elements=new ArrayList<WebElement>();
+        elements.add(myWalletPage.totalBalance);
+        elements.add(myWalletPage.pendingBalance);
+        elements.add(myWalletPage.runningBalance);
+        elements.forEach(n->Assert.assertTrue(n.isDisplayed()));
+
+
+
+    }
+
+    @And("verify that Recharge wallet button is visible and leads to the Recharge Amount window")
+    public void verifyThatRechargeWalletButtonIsVisibleAndLeadsToTheRechargeAmountWindow() {
+        ReusableMethods.scrollDownByPixel(350);
+        Assert.assertTrue(myWalletPage.rechargeWalletButton.isDisplayed());
+        ReusableMethods.jsClick(myWalletPage.rechargeWalletButton);
+        ReusableMethods.waitForVisibility(myWalletPage.rechargeAmountWindowHeader,30);
+        Assert.assertTrue(myWalletPage.rechargeAmountWindowHeader.isDisplayed());
     }
 }
