@@ -1,4 +1,4 @@
-@smoke
+
 Feature:Dashboard test
 
   Background:
@@ -12,3 +12,11 @@ Feature:Dashboard test
   Scenario:Verify that the My Wallet link in the side bar on the Dashboard page leads to the Wallet page.
     And  verify that the link leads to the My Wallet page
     And Close the site
+
+  Scenario: Verify that the Total Balance, Running Balance, and Pending Balance boards are visible on the My Wallet page.
+    And veify that the total balance running balance and Pending balance are visible
+    Then Close the site
+
+  Scenario: Verify that the Recharge Wallet button is visible on the My Wallet page and when clicked, the Recharge Amount window opens.
+    And verify that Recharge wallet button is visible and leads to the Recharge Amount window
+    Then Close the site
