@@ -54,6 +54,18 @@ public class MyWalletPage {
     @FindBy(xpath = "//h3[text()='Recharge Amount']")
     public WebElement rechargeAmountWindowHeader;
 
+    @FindBy(xpath = "//input[@id='recharge_amount']")
+    public WebElement enterRechargeAmountBox;
+
+    @FindBy(xpath = "//h5[text()='Cancel']")
+    public WebElement cancelButton;
+
+    @FindBy(xpath = "//button[text()='Add Fund']")
+    public WebElement addFundButton;
+
+    @FindBy(xpath = "//img[@title='Stripe']")
+    public WebElement stripeImage;
+
 
 
 }
