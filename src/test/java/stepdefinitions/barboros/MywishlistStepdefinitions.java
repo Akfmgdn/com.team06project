@@ -1,6 +1,7 @@
 package stepdefinitions.barboros;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -152,15 +153,15 @@ public class MywishlistStepdefinitions {
     public void click_delete_icon_and_verify_that_the_relevant_product_is_deleted() {
 
         ReusableMethods.bekle(5);
-        List<WebElement> products=wishlist.wishListProducts;
-        int number= products.size();
+        List<WebElement> products = wishlist.wishListProducts;
+        int number = products.size();
         ReusableMethods.hover(wishlist.wishListFirstProduct);
         wishlist.deleteIcon.click();
         ReusableMethods.bekle(2);
         wishlist.popUpDeleteButton.click();
         ReusableMethods.bekle(2);
-        products=wishlist.wishListProducts;
-        Assert.assertTrue(number== products.size()+1);
+        products = wishlist.wishListProducts;
+        Assert.assertTrue(number == products.size() + 1);
     }
 
 
@@ -180,6 +181,7 @@ public class MywishlistStepdefinitions {
 
     @Given("close the browser")
     public void close_the_browser() {
-        Driver.quitDriver();
+
+        Driver.closeDriver();
     }
 }
