@@ -13,6 +13,12 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(xpath = "(//input[@placeholder='Enter email address'])[1]")
+    public WebElement cokiesMail;
+
+    @FindBy(xpath = "//button[@id='modalSubscribeBtn']")
+    public WebElement cokiesButon;
+
     @FindBy(xpath="//*[text()='Wishlist (']")
     public WebElement wishListLink;
 

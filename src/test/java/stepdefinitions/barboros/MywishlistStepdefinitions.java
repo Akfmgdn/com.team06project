@@ -1,6 +1,7 @@
 package stepdefinitions.barboros;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import pages.HomePage;
@@ -54,10 +55,9 @@ public class MywishlistStepdefinitions {
     public void verify_that_the_of_items_to_be_displayed_on_the_wishlist_page_can_be_changed(String no) {
         wishlist.numberOfItemListedButton.click();
         wishlist.max16ItemDisplayed.click();
-        String number=wishlist.currentNumberofItemBox.getText();
+        String number = wishlist.currentNumberofItemBox.getText();
         Assert.assertTrue(number.contains(no));
     }
-
 
 
 }
