@@ -19,5 +19,8 @@ public class HomePage {
     @FindBy(xpath="(//*[text()='Login'])[1]")
     public WebElement loginLink;
 
+    @FindBy(xpath = "//*[text()='/ Logout']")
+    public WebElement logoutLink;
+
 
 }

@@ -1,7 +1,7 @@
-Feature: Mywishlist page tests
+Feature: Mywishlist page tests 1
 
 
-  Scenario: Verify that the user has access to the My Wishlist page and hat the products that the user likes are listed on the My Wishlist page.
+  Scenario: listed product My Wishlist page.
     * login to the website
     * click wishlist link verify that the link leads to the MywishlistPage
     * verify that the hat the products that the user likes are listed on the My Wishlist page.

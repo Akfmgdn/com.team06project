@@ -17,6 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MywishlistStepdefinitions {
+
     MyWishlistPage wishlist = new MyWishlistPage();
     HomePage home = new HomePage();
     LoginPage login = new LoginPage();
@@ -96,7 +97,12 @@ public class MywishlistStepdefinitions {
     public void click_wishlink_and_hover_over_a_product() {
         home.wishListLink.click();
         ReusableMethods.hover(wishlist.wishListFirstProduct);
+        ReusableMethods.bekle(1);
+    }
 
+    @Given("hover over a product")
+    public void hover_over_a_product() {
+        ReusableMethods.hover(wishlist.wishListFirstProduct);
     }
 
     @Given("click compare icon and verify that the product added to compare page")
@@ -104,22 +110,31 @@ public class MywishlistStepdefinitions {
 
         String countCompare = wishlist.countOfCompareProduct.getText();
         int num = Integer.parseInt(countCompare);
+        int number;
         wishlist.addtoCompareIcon.click();
         ReusableMethods.bekle(2);
 
         try {
             if (wishlist.adtoComparePopupButton.isDisplayed()) {
                 wishlist.adtoComparePopupButton.click();
+                ReusableMethods.bekle(2);
+                countCompare = wishlist.countOfCompareProduct.getText();
+                number = Integer.parseInt(countCompare);
+                Assert.assertTrue(number == num + 1);
+                ReusableMethods.bekle(2);
+                ReusableMethods.jsClick(wishlist.compareLink);
+                compare.resetCompareButton.click();
+
             }
         } catch (Exception e) {
             ReusableMethods.bekle(2);
             countCompare = wishlist.countOfCompareProduct.getText();
-            int number = Integer.parseInt(countCompare);
+            number = Integer.parseInt(countCompare);
             Assert.assertTrue(number == num + 1);
+            ReusableMethods.jsClick(wishlist.compareLink);
+            compare.resetCompareButton.click();
         }
 
-        wishlist.compareLink.click();
-        compare.resetCompareButton.click();
 
     }
 
@@ -127,7 +142,7 @@ public class MywishlistStepdefinitions {
     public void click_show_icon_and_verify_that_the_show_window_of_the_relevant_product_open() {
 
         wishlist.showIcon.click();
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
         Assert.assertTrue(wishlist.showCloseIcon.isDisplayed());
         wishlist.showCloseIcon.click();
 
@@ -141,9 +156,26 @@ public class MywishlistStepdefinitions {
         int number= products.size();
         ReusableMethods.hover(wishlist.wishListFirstProduct);
         wishlist.deleteIcon.click();
+        ReusableMethods.bekle(2);
         wishlist.popUpDeleteButton.click();
+        ReusableMethods.bekle(2);
         products=wishlist.wishListProducts;
         Assert.assertTrue(number== products.size()+1);
+    }
+
+
+    @Given("click add to Cart icon and verify that the product is added to Card Page")
+    public void click_add_to_cart_icon_and_verify_that_the_product_is_added_to_card_page() {
+
+        ReusableMethods.jsClick(wishlist.addToCartLink);
+        ReusableMethods.bekle(2);
+        wishlist.addToCartLinkPopup.click();
+        ReusableMethods.bekle(2);
+        try {
+            Assert.assertTrue(wishlist.addToCartText.isDisplayed());
+        } catch (Exception e) {
+            Assert.assertTrue(false);
+        }
     }
 
     @Given("close the browser")

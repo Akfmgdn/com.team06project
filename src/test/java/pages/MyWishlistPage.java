@@ -67,6 +67,18 @@ public class MyWishlistPage {
     @FindBy(xpath = "(//button[@type='submit'])[2]")
     public WebElement popUpDeleteButton;
 
+    @FindBy(xpath = "(//*[text()='Add To Cart'])[1]")
+    public WebElement addToCartLink;
+
+    @FindBy(xpath = "//a[@id='add_to_cart_btn_modal' and contains(@class, 'add_to_cart') and contains(@class, 'home10_primary_btn2')]")
+    public WebElement addToCartLinkPopup;
+
+    @FindBy(xpath = "//*[text()='View cart']")
+    public WebElement addToCartText;
+
+
+
+
 
 
 
