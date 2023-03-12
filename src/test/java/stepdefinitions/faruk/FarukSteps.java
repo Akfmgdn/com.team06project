@@ -86,4 +86,50 @@ public class FarukSteps {
         ReusableMethods.waitForVisibility(myWalletPage.rechargeAmountWindowHeader,30);
         Assert.assertTrue(myWalletPage.rechargeAmountWindowHeader.isDisplayed());
     }
+
+    @And("Hit the Recharge Amount button")
+    public void hitTheRechargeAmountButton() {
+        ReusableMethods.scrollDownByPixel(350);
+        ReusableMethods.jsClick(myWalletPage.rechargeWalletButton);
+    }
+
+    @Then("verify that there is a TextBox for recharging the amount and it is enabled")
+    public void verifyThatThereIsATextBoxForRechargingTheAmountAndItIsEnabled() {
+        ReusableMethods.waitForVisibility(myWalletPage.enterRechargeAmountBox,30);
+        Assert.assertTrue(myWalletPage.enterRechargeAmountBox.isDisplayed());
+        Assert.assertTrue(myWalletPage.enterRechargeAmountBox.isEnabled());
+    }
+
+    @Then("Verify that he Cancel button is visible and able to cancel the transaction.")
+    public void verifyThatHeCancelButtonIsVisibleAndAbleToCancelTheTransaction() {
+        ReusableMethods.waitForVisibility(myWalletPage.cancelButton,30);
+        Assert.assertTrue(myWalletPage.cancelButton.isDisplayed());
+        Assert.assertTrue(myWalletPage.cancelButton.isEnabled());
+
+    }
+
+    @Then("Verify that Add Fund button is visible and redirects to the relevant page.")
+    public void verifyThatAddFundButtonIsVisibleAndRedirectsToTheRelevantPage() {
+        ReusableMethods.waitForVisibility(myWalletPage.addFundButton,30);
+        Assert.assertTrue(myWalletPage.addFundButton.isDisplayed());
+        Assert.assertTrue(myWalletPage.addFundButton.isEnabled());
+        myWalletPage.enterRechargeAmountBox.sendKeys("300");
+        myWalletPage.addFundButton.click();
+        ReusableMethods.waitForVisibility(myWalletPage.stripeImage,30);
+        Assert.assertTrue(myWalletPage.stripeImage.isDisplayed());
+    }
+
+    @And("Verify  Date, Trx Id, Amount, Type, Payment Method, Status columns are visible")
+    public void verifyDateTrxIdAmountTypePaymentMethodStatusColumnsAreVisible() {
+        ReusableMethods.scrollDownByPixel(350);
+        List<WebElement> dataTableHeaders = myWalletPage.rechargeHistoryDataTableHeaders;
+        dataTableHeaders.forEach(element -> Assert.assertTrue(element.isDisplayed()));
+    }
+
+    @And("Verify that Wallet transactions are visible in the Wallet Recharge History list")
+    public void verifyThatWalletTransactionsAreVisibleInTheWalletRechargeHistoryList() {
+        ReusableMethods.scrollDownByPixel(350);
+        List<WebElement> walletHistory = myWalletPage.walletsHistoryColumnData;
+        walletHistory.forEach(element -> Assert.assertTrue(element.isDisplayed()));
+    }
 }

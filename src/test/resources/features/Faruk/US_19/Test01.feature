@@ -20,3 +20,26 @@ Feature:Dashboard test
   Scenario: Verify that the Recharge Wallet button is visible on the My Wallet page and when clicked, the Recharge Amount window opens.
     And verify that Recharge wallet button is visible and leads to the Recharge Amount window
     Then Close the site
+
+  Scenario: Verify that there is a TextBox that can be entered an amount in the Recharge Amount tab.
+    And Hit the Recharge Amount button
+    Then verify that there is a TextBox for recharging the amount and it is enabled
+    And Close the site
+
+  Scenario:it must be verified that the Cancel button on the Recharge Amount tab is visible and able to cancel the transaction.
+    And Hit the Recharge Amount button
+    Then Verify that he Cancel button is visible and able to cancel the transaction.
+    And Close the site
+
+  Scenario: it must be verified that the Add Fund button is visible and redirects to the relevant page.
+    And  Hit the Recharge Amount button
+    Then Verify that Add Fund button is visible and redirects to the relevant page.
+    And Close the site
+
+  Scenario: Verify that there are Date, Trx Id, Amount, Type, Payment Method, Status columns in the Wallet Recharge History list on the My Wallet page.
+    And Verify  Date, Trx Id, Amount, Type, Payment Method, Status columns are visible
+    Then Close the site
+  @wip1
+  Scenario: The presence of Wallet transactions must be verified in the Wallet Recharge History list on the My Wallet page.
+    And Verify that Wallet transactions are visible in the Wallet Recharge History list
+    Then Close the site
