@@ -2,8 +2,14 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 public class CartPage {
+
+    public CartPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
     // US-10
 
     // US10-TC1001
@@ -64,5 +70,7 @@ public class CartPage {
     // US10-TC1007
     @FindBy(xpath = "//div[@class='col-lg-auto col-6 order-5 order-lg-0 text-end']")
     public WebElement deleteButton;
+
+
 
 }

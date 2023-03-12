@@ -46,4 +46,7 @@ public class HomePage {
     @FindBy(xpath = "(//*[text()='Add to Cart'])[1]")
     public WebElement addToCartLink;
 
+    @FindBy(xpath = "(//*[text()='Cart ('])[1]")
+    public WebElement cartButton;
+
 }
