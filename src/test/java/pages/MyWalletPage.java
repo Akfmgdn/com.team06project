@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class MyWalletPage {
 
     public MyWalletPage(){
@@ -65,6 +67,12 @@ public class MyWalletPage {
 
     @FindBy(xpath = "//img[@title='Stripe']")
     public WebElement stripeImage;
+
+    @FindBy(xpath = "(//table/thead/tr)[1]/th")
+    public List<WebElement> rechargeHistoryDataTableHeaders;
+
+    @FindBy(xpath = "(//table/tbody/tr)[1]/td[6]")
+    public List<WebElement> walletsHistoryColumnData;
 
 
 

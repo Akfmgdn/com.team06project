@@ -118,4 +118,18 @@ public class FarukSteps {
         ReusableMethods.waitForVisibility(myWalletPage.stripeImage,30);
         Assert.assertTrue(myWalletPage.stripeImage.isDisplayed());
     }
+
+    @And("Verify  Date, Trx Id, Amount, Type, Payment Method, Status columns are visible")
+    public void verifyDateTrxIdAmountTypePaymentMethodStatusColumnsAreVisible() {
+        ReusableMethods.scrollDownByPixel(350);
+        List<WebElement> dataTableHeaders = myWalletPage.rechargeHistoryDataTableHeaders;
+        dataTableHeaders.forEach(element -> Assert.assertTrue(element.isDisplayed()));
+    }
+
+    @And("Verify that Wallet transactions are visible in the Wallet Recharge History list")
+    public void verifyThatWalletTransactionsAreVisibleInTheWalletRechargeHistoryList() {
+        ReusableMethods.scrollDownByPixel(350);
+        List<WebElement> walletHistory = myWalletPage.walletsHistoryColumnData;
+        walletHistory.forEach(element -> Assert.assertTrue(element.isDisplayed()));
+    }
 }

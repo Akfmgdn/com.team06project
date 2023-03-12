@@ -35,3 +35,11 @@ Feature:Dashboard test
     And  Hit the Recharge Amount button
     Then Verify that Add Fund button is visible and redirects to the relevant page.
     And Close the site
+
+  Scenario: Verify that there are Date, Trx Id, Amount, Type, Payment Method, Status columns in the Wallet Recharge History list on the My Wallet page.
+    And Verify  Date, Trx Id, Amount, Type, Payment Method, Status columns are visible
+    Then Close the site
+  @wip1
+  Scenario: The presence of Wallet transactions must be verified in the Wallet Recharge History list on the My Wallet page.
+    And Verify that Wallet transactions are visible in the Wallet Recharge History list
+    Then Close the site
