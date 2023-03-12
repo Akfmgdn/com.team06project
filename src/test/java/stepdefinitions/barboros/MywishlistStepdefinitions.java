@@ -29,10 +29,18 @@ public class MywishlistStepdefinitions {
     @Given("login to the website")
     public void login_to_the_website() {
         Driver.getDriver().get(ConfigReader.getProperty("urlCustomer"));
-        home.loginLink.click();
-        login.emailAdressBox.sendKeys(ConfigReader.getProperty("unameBrnC"));
-        login.passwordBox.sendKeys(ConfigReader.getProperty("pwordBrn"));
-        login.signInButton.click();
+        try {
+            home.newsletterSubscribeCloseButton.click();
+            home.loginLink.click();
+            login.emailAdressBox.sendKeys(ConfigReader.getProperty("unameBrnC"));
+            login.passwordBox.sendKeys(ConfigReader.getProperty("pwordBrn"));
+            login.signInButton.click();
+        } catch (Exception e) {
+            home.loginLink.click();
+            login.emailAdressBox.sendKeys(ConfigReader.getProperty("unameBrnC"));
+            login.passwordBox.sendKeys(ConfigReader.getProperty("pwordBrn"));
+            login.signInButton.click();
+        }
     }
 
     @Given("click wishlist link verify that the link leads to the MywishlistPage")
@@ -170,13 +178,22 @@ public class MywishlistStepdefinitions {
 
         ReusableMethods.jsClick(wishlist.addToCartLink);
         ReusableMethods.bekle(2);
-        wishlist.addToCartLinkPopup.click();
-        ReusableMethods.bekle(2);
         try {
-            Assert.assertTrue(wishlist.addToCartText.isDisplayed());
+            wishlist.addToCartLinkPopup.click();
+            ReusableMethods.bekle(2);
+            try {
+                Assert.assertTrue(wishlist.addToCartText.isDisplayed());
+            } catch (Exception e) {
+                Assert.assertTrue(false);
+            }
         } catch (Exception e) {
-            Assert.assertTrue(false);
+            try {
+                Assert.assertTrue(wishlist.addToCartText.isDisplayed());
+            } catch (Exception ex) {
+                Assert.assertTrue(false);
+            }
         }
+
     }
 
     @Given("close the browser")
