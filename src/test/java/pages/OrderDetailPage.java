@@ -58,4 +58,10 @@ public class OrderDetailPage {
     @FindBy(xpath = "//div[@class='col-xl-4 col-lg-4']")
     public WebElement descriptionTextsLabel;
 
+    //US27
+    @FindBy(xpath = "(//div[@class='dashboard_white_box_body'])[1]")
+    public WebElement orderedTextsLabel;
+
+
+
 }
