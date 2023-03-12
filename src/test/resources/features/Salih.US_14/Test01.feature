@@ -10,8 +10,7 @@ Feature: As a user, I would like to have an About Us page on the site
     Then Verify that the text Online Shopping Easy Cost-Efficient is visible
     Then verify that Team Member text is visible on the About Us page
     Then verify that the characters, statuses and images of Robert Pattison, Johnny Depp, Jason Statham, Bradley Cooper are visible
-
-
+    # salih
 
 
 
