@@ -6,6 +6,16 @@ import org.openqa.selenium.support.FindBy;
 public class AdminDashboardPage {
     // US31
     // US31-TC3101
+
+    @FindBy(xpath = "((//*[text()='Dashboard'])[2]")
+    public WebElement dashboardtextLink;
+
+    @FindBy(xpath = "//*[text()='Action']")
+    public WebElement actionLink;
+
+    @FindBy(xpath = "//*[text()='My Order']")
+    public WebElement myOrderLink;
+
     @FindBy(xpath = "//div[@class='user_avatar_div']")
     public WebElement profileIconLink;
 
@@ -44,6 +54,15 @@ public class AdminDashboardPage {
 
 
     // US31-TC3107
+    @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[1]")
+    public WebElement purchase;
+
+    @FindBy(xpath = "//div[@class='nice-select-search-box']")
+    public WebElement searchHistory;
+
+    @FindBy(xpath = "(//*[text()='All History'])[3]")
+    public WebElement allHistory;
+
     @FindBy(xpath = "//a[@class='primary-btn radius_30px mr-10 fix-gr-bg add_new_address']")
     public WebElement addNewAdressButton;
 

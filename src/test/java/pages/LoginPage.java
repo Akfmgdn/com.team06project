@@ -11,12 +11,18 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+    @FindBy(xpath = "(//*[text()='Login'])[1]")
+    public WebElement loginLinkText;
+
     @FindBy(xpath = "//input[@placeholder='Email address']")
     public WebElement emailAdressBox;
 
     @FindBy(xpath = "//input[@id='password']")
     public WebElement passwordBox;
 
-    @FindBy(xpath = "//button[@id='sign_in_btn']")
+    @FindBy(xpath = "(//*[text()='Sign In'])[2]")
     public WebElement signInButton;
+
+
 }

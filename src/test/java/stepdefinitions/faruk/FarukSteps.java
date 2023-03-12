@@ -62,7 +62,7 @@ public class FarukSteps {
 
     @And("Close the site")
     public void closeTheSite() {
-        Driver.quitDriver();
+        Driver.getDriver().quit();
     }
 
     @And("veify that the total balance running balance and Pending balance are visible")
