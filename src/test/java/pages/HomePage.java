@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 import javax.xml.xpath.XPath;
+import java.util.List;
 
 public class HomePage {
 
@@ -25,10 +26,9 @@ public class HomePage {
     @FindBy(xpath="(//*[text()='Login'])[1]")
     public WebElement loginLink;
 
-<<<<<<< HEAD
     @FindBy(xpath = "//*[text()='/ Logout']")
     public WebElement logoutLink;
-=======
+
     //https://qa.trendlifebuy.com/>dashboard linki
     @FindBy(xpath = "(//a[text()='Dashboard'])[1]")
     public WebElement dashboardLink;
@@ -36,7 +36,14 @@ public class HomePage {
     //https://qa.trendlifebuy.com/profile/dashboard>My Order Linki
     @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[3]")
     public WebElement myOrderLink;
->>>>>>> main
 
+    @FindBy(xpath = "//div[@class='product__meta text-center']")
+    public List<WebElement> listedProductsonHomepage;
+
+    @FindBy(xpath = "(//div[@class='product_thumb_upper'])[1]")
+    public WebElement firstProduct;
+
+    @FindBy(xpath = "(//*[text()='Add to Cart'])[1]")
+    public WebElement addToCartLink;
 
 }

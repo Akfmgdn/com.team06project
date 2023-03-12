@@ -1,6 +1,6 @@
 Feature: Mywishlist page tests 2
 
-  @group1
+  @brn3
   Scenario: compare icon
 
     * login to the website
@@ -8,7 +8,7 @@ Feature: Mywishlist page tests 2
     * click compare icon and verify that the product added to compare page
 
 
-  @group1
+  @brn3
   Scenario:show icon
 
     * click wishlink and hover over a product
