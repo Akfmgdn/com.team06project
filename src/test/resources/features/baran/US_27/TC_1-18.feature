@@ -9,7 +9,6 @@ Feature: Registered User tests 2
 
   @brn4
   Scenario:check out page
-   # * login to the website
     * check out button and check out page verifications
 
   @brn4
