@@ -76,6 +76,11 @@ public class MyWishlistPage {
     @FindBy(xpath = "//*[text()='View cart']")
     public WebElement addToCartText;
 
+    @FindBy(xpath = "(//*[text()='View cart'])[1]")
+    public WebElement viewCart;
+
+
+
 
 
 
