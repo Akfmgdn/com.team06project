@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.MyAccountPage;
 import pages.MyWalletPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -18,6 +19,7 @@ import java.util.List;
 
 public class FarukSteps {
     MyWalletPage myWalletPage = new MyWalletPage();
+    MyAccountPage myAccountPage = new MyAccountPage();
     @Given("Go to site")
     public void goToSite() {
         Driver.getDriver().get("https://qa.trendlifebuy.com/");
@@ -131,5 +133,37 @@ public class FarukSteps {
         ReusableMethods.scrollDownByPixel(350);
         List<WebElement> walletHistory = myWalletPage.walletsHistoryColumnData;
         walletHistory.forEach(element -> Assert.assertTrue(element.isDisplayed()));
+    }
+
+    @Then("Click my account link")
+    public void clickMyAccountLink() {
+        ReusableMethods.jsClick(myAccountPage.myAccountLink);
+    }
+
+    @Then("verify that the account page is accessible")
+    public void verifyThatTheAccountPageIsAccessible() {
+        ReusableMethods.waitForVisibility(myAccountPage.userDescriptionBar,30);
+        Assert.assertTrue(myAccountPage.userDescriptionBar.isDisplayed());
+    }
+
+    @And("upload the profile picture clicking choose file button")
+    public void uploadTheProfilePictureClickingChooseFileButton() {
+        ReusableMethods.scrollDownByPixel(500);
+        //
+        String dosyaYolu= System.getProperty("user.home")+"\\Downloads\\ProfilePic.jpg";
+        myAccountPage.chooseFileButton.sendKeys(dosyaYolu);
+
+    }
+
+    @Then("verify that the profile picture is updated")
+    public void verifyThatTheProfilePictureIsUpdated() {
+        ReusableMethods.waitForVisibility(myAccountPage.nameOfTheFileUploaded, 30);
+        Assert.assertTrue(myAccountPage.nameOfTheFileUploaded.isDisplayed());
+    }
+
+    @And("verify First Name, Last Name, Email Address, Phone Number, Date of Birth and Description TextBoxes  are visible")
+    public void verifyFirstNameLastNameEmailAddressPhoneNumberDateOfBirthAndDescriptionTextBoxesAreVisible() {
+        List<WebElement> webElementList = myAccountPage.myAccountElements;
+        webElementList.forEach(n->Assert.assertTrue(n.isDisplayed()));
     }
 }
