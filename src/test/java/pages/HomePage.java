@@ -40,13 +40,19 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='product__meta text-center']")
     public List<WebElement> listedProductsonHomepage;
 
-    @FindBy(xpath = "(//div[@class='product_thumb_upper'])[1]")
+    @FindBy(xpath = "(//div[@class='product__meta text-center'])[1]")
     public WebElement firstProduct;
 
-    @FindBy(xpath = "(//*[text()='Add to Cart'])[1]")
+    @FindBy(xpath = "(//*[text()='Add To Cart'])[2]")
     public WebElement addToCartLink;
 
     @FindBy(xpath = "(//*[text()='Cart ('])[1]")
     public WebElement cartButton;
+
+    @FindBy(xpath = "(//i[@class='ti-close'])[2]")
+    public WebElement newsletterSubscribeCloseButton;
+
+    @FindBy(xpath = "(//*[text()='View All'])[1]")
+    public WebElement viewAllLink;
 
 }
