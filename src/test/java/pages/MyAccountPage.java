@@ -54,4 +54,11 @@ public class MyAccountPage {
 
     @FindBy(xpath = "//div[text()='Success']")
     public WebElement successMessage;
+
+    //Change Password
+    @FindBy(xpath = "//button[text()='Change Password']")
+    public WebElement changePasswordButton;
+
+    @FindBy(xpath = "//input[@class='primary_input3 style3']")
+    public List<WebElement> changePasswordAllTextBoxes;
 }
