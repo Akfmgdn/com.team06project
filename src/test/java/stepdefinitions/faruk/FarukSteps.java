@@ -44,7 +44,7 @@ public class FarukSteps {
 
     @Then("Pass in the credentials and click on the submit button")
     public void passInTheCredentialsAndClickOnTheSubmitButton() {
-        myWalletPage.loginEmailBox.sendKeys("user006@trendlifebuy.com");
+        myWalletPage.loginEmailBox.sendKeys("user133@trendlifebuy.com");
         myWalletPage.loginPasswordBox.sendKeys("Trendlife123");
         JavascriptExecutor jse=(JavascriptExecutor)Driver.getDriver();
         jse.executeScript("arguments[0].click();",myWalletPage.signInButton);
@@ -181,12 +181,8 @@ public class FarukSteps {
 
     @And("change the information in the TextBoxes {string}, {string}, {string},{string},{string} and {string}")
     public void changeTheInformationInTheTextBoxesAnd(String firstname, String lastname, String email, String phone, String dateOfBirth, String description) {
-        myAccountPage.firstNameBox.clear();
-        myAccountPage.firstNameBox.sendKeys(firstname);
         myAccountPage.lastNameBox.clear();
         myAccountPage.lastNameBox.sendKeys(lastname);
-        myAccountPage.emailAddressBox.clear();
-        myAccountPage.emailAddressBox.sendKeys(email);
         myAccountPage.phoneBox.clear();
         myAccountPage.phoneBox.sendKeys(phone);
         myAccountPage.dateOfBirthBox.clear();
@@ -215,5 +211,20 @@ public class FarukSteps {
         Assert.assertEquals(phone,myAccountPage.phoneBox.getAttribute("value"));
         Assert.assertEquals(dateOfBirth, myAccountPage.dateOfBirthBox.getAttribute("value"));
         Assert.assertEquals(Description, myAccountPage.descriptionBox.getAttribute("value"));
+    }
+
+    @And("hit the change password button")
+    public void hitTheChangePasswordButton() {
+        myAccountPage.changePasswordButton.click();
+
+    }
+
+    @Then("verify that the Current Password, New Password, Re enter New Password TextBoxes are available")
+    public void verifyThatTheCurrentPasswordNewPasswordReEnterNewPasswordTextBoxesAreAvailable() {
+        List<WebElement> allTextBoxes =myAccountPage.changePasswordAllTextBoxes;
+        allTextBoxes.forEach(element -> {
+            ReusableMethods.waitForVisibility(element,30);
+            Assert.assertTrue(element.isDisplayed());
+        });
     }
 }
