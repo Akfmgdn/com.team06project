@@ -3,9 +3,12 @@ package stepdefinitions.faruk;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MyAccountPage;
@@ -14,6 +17,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,7 +69,7 @@ public class FarukSteps {
 
     @And("Close the site")
     public void closeTheSite() {
-        Driver.getDriver().quit();
+        Driver.closeDriver();
     }
 
     @And("veify that the total balance running balance and Pending balance are visible")
@@ -165,5 +170,50 @@ public class FarukSteps {
     public void verifyFirstNameLastNameEmailAddressPhoneNumberDateOfBirthAndDescriptionTextBoxesAreVisible() {
         List<WebElement> webElementList = myAccountPage.myAccountElements;
         webElementList.forEach(n->Assert.assertTrue(n.isDisplayed()));
+    }
+
+
+    @And("Verify that the information is the same as the user's information {string} and {string}")
+    public void verifyThatTheInformationIsTheSameAsTheUserSInformationAnd(String expectedFirstname, String expectedEmail) {
+        Assert.assertEquals(expectedFirstname, myAccountPage.firstNameBox.getAttribute("value"));
+        Assert.assertEquals(expectedEmail, myAccountPage.emailAddressBox.getAttribute("value"));
+    }
+
+    @And("change the information in the TextBoxes {string}, {string}, {string},{string},{string} and {string}")
+    public void changeTheInformationInTheTextBoxesAnd(String firstname, String lastname, String email, String phone, String dateOfBirth, String description) {
+        myAccountPage.firstNameBox.clear();
+        myAccountPage.firstNameBox.sendKeys(firstname);
+        myAccountPage.lastNameBox.clear();
+        myAccountPage.lastNameBox.sendKeys(lastname);
+        myAccountPage.emailAddressBox.clear();
+        myAccountPage.emailAddressBox.sendKeys(email);
+        myAccountPage.phoneBox.clear();
+        myAccountPage.phoneBox.sendKeys(phone);
+        myAccountPage.dateOfBirthBox.clear();
+        myAccountPage.dateOfBirthBox.sendKeys(dateOfBirth);
+        myAccountPage.descriptionBox.clear();
+        myAccountPage.descriptionBox.sendKeys(description);
+    }
+
+    @When("click on the update button")
+    public void clickOnTheUpdateButton() {
+       ReusableMethods.jsClick( myAccountPage.updateNowButton);
+       ReusableMethods.waitForVisibility(myAccountPage.successMessage,30);
+       Actions actions=new Actions(Driver.getDriver());
+       actions.sendKeys(Keys.PAGE_UP).perform();
+       actions.sendKeys(Keys.PAGE_UP).perform();
+       ReusableMethods.jsClick(myWalletPage.dashboardLink);
+       ReusableMethods.jsClick( myAccountPage.myAccountLink);
+
+    }
+
+    @And("verify that the user's information is updated {string}, {string}, {string},{string},{string} and {string}")
+    public void verifyThatTheUserSInformationIsUpdatedAnd(String firstname, String lastname, String email, String phone, String dateOfBirth, String Description) {
+        Assert.assertEquals(firstname,myAccountPage.firstNameBox.getAttribute("value"));
+        Assert.assertEquals(lastname,myAccountPage.lastNameBox.getAttribute("value"));
+        Assert.assertEquals(email, myAccountPage.emailAddressBox.getAttribute("value"));
+        Assert.assertEquals(phone,myAccountPage.phoneBox.getAttribute("value"));
+        Assert.assertEquals(dateOfBirth, myAccountPage.dateOfBirthBox.getAttribute("value"));
+        Assert.assertEquals(Description, myAccountPage.descriptionBox.getAttribute("value"));
     }
 }
