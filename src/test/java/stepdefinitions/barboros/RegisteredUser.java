@@ -56,9 +56,9 @@ public class RegisteredUser {
     @Given("verify the Add to Card functions")
     public void verify_the_add_to_card_functions() {
 
-        ReusableMethods.jsClick(home.viewAllLink);
+        //ReusableMethods.jsClick(home.viewAllLink);
         ReusableMethods.hover(home.firstProduct);
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(3);
         ReusableMethods.jsClick(home.firstProduct);
         ReusableMethods.jsClick(home.addToCartLink);
 
@@ -129,5 +129,14 @@ public class RegisteredUser {
         String orderText = order.orderedTextsLabel.getText();
         Assert.assertTrue(orderText.contains("Your order has been received"));
         Assert.assertTrue(order.orderIdLabel.isDisplayed());
+    }
+
+    @Given("ilk urunun ustune git add to cart tikla")
+    public void ilk_urunun_ustune_git_add_to_cart_tikla() {
+        ReusableMethods.bekle(3);
+        ReusableMethods.hover(home.firstProduct);
+        ReusableMethods.bekle(5);
+        home.addToCartLink.click();
+
     }
 }
