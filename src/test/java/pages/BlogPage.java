@@ -2,8 +2,14 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 public class BlogPage {
+
+    public BlogPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
     // US11
 
     // US11-TC1101
