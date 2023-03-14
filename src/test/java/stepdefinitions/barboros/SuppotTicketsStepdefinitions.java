@@ -52,7 +52,9 @@ public class SuppotTicketsStepdefinitions {
     @Given("verify that it can be sent as an answer after additional files are added to the ticket and its status is changed.")
     public void verify_that_it_can_be_sent_as_an_answer_after_additional_files_are_added_to_the_ticket_and_its_status_is_changed() {
 
-        Driver.getDriver().get("https://qa.trendlifebuy.com/admin/ticket/tickets/50");
+      // int num=51;
+      // Driver.getDriver().get("https://qa.trendlifebuy.com/admin/ticket/tickets/"+num);
+      // num++;
         ReusableMethods.bekle(2);
         String message="brnbrnx";
         ticket.noteTextBox.sendKeys(message);

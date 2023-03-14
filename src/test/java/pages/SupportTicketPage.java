@@ -37,7 +37,7 @@ public class SupportTicketPage {
     @FindBy(xpath = "(//td[@class='sorting_1'])[1]")
     public WebElement plussign;
 
-    @FindBy(xpath = "//tbody/tr[2]/td/ul/li[2]/span[2]/div/div/a[1]") //(//a[@class='dropdown-item'])[1]
+    @FindBy(xpath = "(//div[@class='dropdown-menu dropdown-menu-right show'])/a[1]") //(//a[@class='dropdown-item'])[1]
     public WebElement showLink;
 
     @FindBy(xpath = "//div[@role='textbox']")
