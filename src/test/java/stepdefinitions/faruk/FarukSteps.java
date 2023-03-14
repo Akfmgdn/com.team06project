@@ -216,6 +216,7 @@ public class FarukSteps {
     @And("hit the change password button")
     public void hitTheChangePasswordButton() {
         myAccountPage.changePasswordButton.click();
+
     }
 
     @Then("verify that the Current Password, New Password, Re enter New Password TextBoxes are available")
