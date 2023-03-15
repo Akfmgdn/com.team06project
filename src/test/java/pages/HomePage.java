@@ -57,4 +57,8 @@ public class HomePage {
 
     //deneme
 
+    //Anasayfa Register link
+    @FindBy(xpath = "//a[normalize-space()='/ Register']")
+    public WebElement registerLink;
+
 }
