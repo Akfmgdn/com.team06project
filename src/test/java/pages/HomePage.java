@@ -55,4 +55,6 @@ public class HomePage {
     @FindBy(xpath = "(//*[text()='View All'])[1]")
     public WebElement viewAllLink;
 
+    //deneme
+
 }

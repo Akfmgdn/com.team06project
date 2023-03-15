@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAccountPage {
@@ -28,4 +29,36 @@ public class MyAccountPage {
 
     @FindBy(xpath = "(//div[@class='row'])[6]/div")
     public List<WebElement> myAccountElements;
+
+    //My Account/basic info
+    @FindBy(xpath = "//input[@id='first_name']")
+    public WebElement firstNameBox;
+
+    @FindBy(xpath="//input[@id='email']")
+    public WebElement emailAddressBox;
+
+    @FindBy(xpath = "//input[@id='last_name']")
+    public WebElement lastNameBox;
+
+    @FindBy(xpath = "//input[@id='phone']")
+    public WebElement phoneBox;
+
+    @FindBy(xpath = "//input[@id='start_datepicker']")
+    public WebElement dateOfBirthBox;
+
+    @FindBy(xpath = "//textarea[@id='textarea']")
+    public WebElement  descriptionBox;
+
+    @FindBy(xpath = "(//button[text()='Update Now'])[1]")
+    public WebElement updateNowButton;
+
+    @FindBy(xpath = "//div[text()='Success']")
+    public WebElement successMessage;
+
+    //Change Password
+    @FindBy(xpath = "//button[text()='Change Password']")
+    public WebElement changePasswordButton;
+
+    @FindBy(xpath = "//input[@class='primary_input3 style3']")
+    public List<WebElement> changePasswordAllTextBoxes;
 }

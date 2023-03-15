@@ -71,6 +71,11 @@ public class CartPage {
     @FindBy(xpath = "//div[@class='col-lg-auto col-6 order-5 order-lg-0 text-end']")
     public WebElement deleteButton;
 
+    @FindBy(xpath = "//div[text()='Product successfully deleted from cart']")
+    public WebElement deleteMessage;
+
+    @FindBy(xpath = "(//span[@class='total_text'])[2]")
+    public WebElement totalPriceLink;
 
 
 }
