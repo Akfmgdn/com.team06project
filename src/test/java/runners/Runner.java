@@ -17,7 +17,6 @@ import org.junit.runner.RunWith;
         dryRun= false
 )
 
-
 public class Runner {
         /*
         Cucumber'da Runner class'i bos bir class'tir
