@@ -61,4 +61,8 @@ public class HomePage {
     @FindBy(xpath = "//a[normalize-space()='/ Register']")
     public WebElement registerLink;
 
+    //https://qa.trendlifebuy.com/profile/dashboard>My Coupon Linki
+    @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[5]")
+    public WebElement myCouponsLink;
+
 }
