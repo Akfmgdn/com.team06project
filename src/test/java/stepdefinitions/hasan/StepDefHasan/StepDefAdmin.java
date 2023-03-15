@@ -42,22 +42,22 @@ public class StepDefAdmin {
 
     @Then("Products menusune clikc yapar")
     public void products_menusune_clikc_yapar() {
-        AdminDashboardPage.DashboardAdmin.click();
+        AdminDashboardPage.dashboardtextLink.click();
         action.sendKeys(Keys.PAGE_DOWN);
         AdminDashboardPage.productManageText.click();
     }
 
     @Then("Product List sayfasina erisir")
     public void product_list_sayfasina_erisir() {
-        AdminDashboardPage.productListLink.click();
-        Assert.assertTrue(AdminDashboardPage.productListLink.isDisplayed());
+        AdminDashboardPage.productsListLink.click();
+        Assert.assertTrue(AdminDashboardPage.productsListLink.isDisplayed());
 
     }
 
     @Given("Product List, Alert List")
     public void productListAlertList() {
-        AdminDashboardPage.productAlertLink.click();
-        Assert.assertTrue(AdminDashboardPage.productListLink.isDisplayed());
+        AdminDashboardPage.productAlertListLink.click();
+        Assert.assertTrue(AdminDashboardPage.productsListLink.isDisplayed());
     }
 
 
@@ -85,8 +85,8 @@ public class StepDefAdmin {
 
     @And("gittigi sayfalar dogrulanir")
     public void gittigiSayfalarDogrulanir() {
-        Assert.assertTrue(AdminDashboardPage.productListLink.isDisplayed());
-        Assert.assertTrue(AdminDashboardPage.productAlertLink.isDisplayed());
+        Assert.assertTrue(AdminDashboardPage.productsListLink.isDisplayed());
+        Assert.assertTrue(AdminDashboardPage.productAlertListLink.isDisplayed());
         Assert.assertTrue(AdminDashboardPage.productOutOfStockList.isDisplayed());
         Assert.assertTrue(AdminDashboardPage.productDisabledList.isDisplayed());
         Assert.assertTrue(AdminDashboardPage.productBySkuList.isDisplayed());

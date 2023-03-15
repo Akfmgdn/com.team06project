@@ -146,7 +146,7 @@ public class StepDefLogin {
     @Then("her urunu secer dogrulamasini yapar")
     public void her_urunu_secer_dogrulamasini_yapar() throws InterruptedException {
         Thread.sleep(10);
-        Assert.assertTrue(AdminDashboardPage.dropDownLastSelected.isDisplayed());
+        Assert.assertTrue(AdminDashboardPage.lastOrderDropDownLast10.isSelected());
         Driver.getDriver().quit();
 
     }
@@ -169,7 +169,7 @@ public class StepDefLogin {
     @Then("Products menusune clikc yapar")
     public void products_menusune_clikc_yapar() {
         action.sendKeys(Keys.PAGE_DOWN);
-        AdminDashboardPage.DashboardAdmin.click();
+        AdminDashboardPage.dashboardText.click();
         AdminDashboardPage.productManageText.click();
     }
 

@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.commons.compress.archivers.zip.X000A_NTFS;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -52,4 +53,22 @@ public class MyOrdersPage {
 
     @FindBy(xpath = "//button[text()='Send']")
     public WebElement orderCancelSendButton;
+
+    //https://qa.trendlifebuy.com/my-purchase-orders
+
+    @FindBy(xpath = "//button[@id='home-tab']")
+    public WebElement butonAll;
+
+    @FindBy(xpath = "//button[@id='Pay-tab']")
+    public WebElement butonToPay;
+
+    @FindBy(xpath = "//button[@id='Ship-tab']")
+    public WebElement butonToShip;
+
+    @FindBy(xpath = "//*[text()='To Recieve']")
+    public WebElement butonToReceive;
+
+
+
+
 }
