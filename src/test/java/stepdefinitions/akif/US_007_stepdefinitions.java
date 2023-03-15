@@ -45,7 +45,7 @@ public class US_007_stepdefinitions {
         Assert.assertEquals(expectedText,actionText);
 
     }
-//
+////
     //TC_02 It must be verified that the First Name Text Box is registered with a name of at least 2 letters.
 
     @Given("It is tested that the First Name Text Box is registered with a name of at least {int} letters.")
