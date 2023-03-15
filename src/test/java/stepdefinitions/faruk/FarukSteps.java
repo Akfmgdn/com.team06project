@@ -227,4 +227,56 @@ public class FarukSteps {
             Assert.assertTrue(element.isDisplayed());
         });
     }
+
+    @And("Pass  the current password and new password into the related textboxes and click on the update button")
+    public void passTheCurrentPasswordAndNewPasswordIntoTheRelatedTextboxesAndClickOnTheUpdateButton() {
+        myAccountPage.currentPasswordBox.sendKeys("Trendlife123");
+        myAccountPage.newPasswordBox.sendKeys("Trendlife1234");
+        myAccountPage.rePasswordBox.sendKeys("Trendlife1234");
+        Actions actions=new Actions(Driver.getDriver());
+        ReusableMethods.jsClick(myAccountPage.updatePasswordButton);
+        ReusableMethods.bekle(3);
+        actions.sendKeys(Keys.PAGE_UP).perform();
+        actions.sendKeys(Keys.PAGE_UP).perform();
+
+    }
+
+    @Then("Click on the logout button and enter the new credentials into the email and username boxes.")
+    public void clickOnTheLogoutButtonAndEnterTheNewCredentialsIntoTheEmailAndUsernameBoxes() {
+        ReusableMethods.waitAndClick(myAccountPage.logoutButton);
+        myWalletPage.loginButton.click();
+        myWalletPage.loginEmailBox.sendKeys("user133@trendlifebuy.com");
+        myWalletPage.loginPasswordBox.sendKeys("Trendlife1234");
+        ReusableMethods.jsClick(myWalletPage.signInButton);
+    }
+
+    @And("Click on the sign in button and verify that the user home is to open")
+    public void clickOnTheSignInButtonAndVerifyThatTheUserHomeIsToOpen() {
+        Assert.assertTrue(myAccountPage.logoutButton.isDisplayed());
+        myWalletPage.dashboardLink.click();
+        ReusableMethods.jsClick(myAccountPage.myAccountLink);
+        myAccountPage.changePasswordButton.click();
+        myAccountPage.currentPasswordBox.sendKeys("Trendlife1234");
+        myAccountPage.newPasswordBox.sendKeys("Trendlife123");
+        myAccountPage.rePasswordBox.sendKeys("Trendlife123");
+        ReusableMethods.jsClick(myAccountPage.updatePasswordButton);
+        ReusableMethods.bekle(3);
+    }
+
+    @And("Adress button is clicked")
+    public void adressButtonIsClicked() {
+        myAccountPage.addressButton.click();
+    }
+
+    @And("Edit icon is clicked")
+    public void editIconIsClicked() {
+        ReusableMethods.jsClick(myAccountPage.editAddressIcon);
+
+    }
+
+    @Then("verify that the Update Address tab is to be opened")
+    public void verifyThatTheUpdateAddressTabIsToBeOpened() {
+        ReusableMethods.waitForVisibility(myAccountPage.updateAddressHeader,30);
+        Assert.assertTrue(myAccountPage.updateAddressHeader.isDisplayed());
+    }
 }
