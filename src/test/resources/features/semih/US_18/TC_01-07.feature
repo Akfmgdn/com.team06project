@@ -1,4 +1,4 @@
-@hasan
+
 Feature: Order Details Page Test
 
   Scenario: TC-01 Relevant Order's Detail Page is Accessed.
