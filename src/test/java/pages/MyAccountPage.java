@@ -61,4 +61,29 @@ public class MyAccountPage {
 
     @FindBy(xpath = "//input[@class='primary_input3 style3']")
     public List<WebElement> changePasswordAllTextBoxes;
+
+    @FindBy(xpath = "//input[@id='currentPassword']")
+    public WebElement currentPasswordBox;
+
+    @FindBy(xpath = "//input[@id='newPass']")
+    public WebElement newPasswordBox;
+
+    @FindBy(xpath = "//input[@id='rePass']")
+    public WebElement rePasswordBox;
+
+    @FindBy(xpath = "(//button[text()='Update Now'])[2]")
+    public WebElement updatePasswordButton;
+
+    @FindBy(xpath = "//a[text()='/ Logout']")
+    public WebElement logoutButton;
+
+    //Adress button
+    @FindBy(xpath = "//button[text()='Address']")
+    public WebElement addressButton;
+
+    @FindBy(xpath = "//button[@class='amazy_status_btn edit_address']")
+    public WebElement editAddressIcon;
+
+    @FindBy(xpath = "//h3[text()='Update Address']")
+    public WebElement updateAddressHeader;
 }
