@@ -19,6 +19,11 @@ Feature: Mywishlist page tests 1
    |criteria|
    |New,Low to high,High to low |
 
+  @wib
+  Scenario:
+    * login to the website
+    * ilk urunun ustune git add to cart tikla
+
 
 
 

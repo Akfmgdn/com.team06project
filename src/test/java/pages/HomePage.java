@@ -40,7 +40,7 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='product__meta text-center']")
     public List<WebElement> listedProductsonHomepage;
 
-    @FindBy(xpath = "(//div[@class='product__meta text-center'])[1]")
+    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div[1]/div/div[5]/div")
     public WebElement firstProduct;
 
     @FindBy(xpath = "(//*[text()='Add To Cart'])[2]")
@@ -54,5 +54,11 @@ public class HomePage {
 
     @FindBy(xpath = "(//*[text()='View All'])[1]")
     public WebElement viewAllLink;
+
+    //deneme
+
+    //Anasayfa Register link
+    @FindBy(xpath = "//a[normalize-space()='/ Register']")
+    public WebElement registerLink;
 
 }
