@@ -13,6 +13,25 @@ public class AdminDashboardPage {
     // US31
     // US31-TC3101
 
+    @FindBy(xpath = "(//*[text()='Products'])[1]")
+    public WebElement productsLink;
+
+    @FindBy(xpath = "//*[text()='Product List']")
+    public WebElement productsListLink;
+
+    @FindBy(xpath = "(//*[text()='Alert List'])[1]")
+    public WebElement productAlertListLink;
+
+    @FindBy(xpath = "//a[@id='product_stock_out_id']")
+    public WebElement productOutOfStockList;
+
+    @FindBy(xpath = "(//*[text()='Disabled Product List'])[1]")
+    public WebElement productDisabledList;
+
+    @FindBy(xpath = "(//*[text()='Product By SKU'])[1]")
+    public WebElement productBySkuList;
+
+
     @FindBy(xpath = "((//*[text()='Dashboard'])[2]")
     public WebElement dashboardtextLink;
 
@@ -21,6 +40,22 @@ public class AdminDashboardPage {
 
     @FindBy(xpath = "//*[text()='My Order']")
     public WebElement myOrderLink;
+
+    @FindBy(xpath = "//div[@class='nice-select amaz_select5 open']")
+    public WebElement lastOrderDropDown;
+
+    @FindBy(xpath = "(//div[@class='nice-select-search-box'])[1]")
+    public WebElement searchBoxOrders;
+
+    @FindBy(xpath = "(//*[text()='Last 10 orders'])[2]")
+    public WebElement lastOrderDropDownLast10;
+
+    @FindBy(xpath = "(//*[text()='Last 20 orders'])[2]")
+    public WebElement lastOrderDropDownLast20;
+
+    @FindBy(xpath = "(//*[text()='Last 40 orders'])[2]")
+    public WebElement lastOrderDropDownLast40;
+
 
     @FindBy(xpath = "//div[@class='user_avatar_div']")
     public WebElement profileIconLink;
