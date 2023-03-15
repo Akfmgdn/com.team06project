@@ -39,4 +39,19 @@ Feature:Dashboard test
     Then verify that the Current Password, New Password, Re enter New Password TextBoxes are available
     Then Close the site
 
+  Scenario: Verifying the password can be updated by using the Update button when the current passwordis typed into the
+  Current Password textBox , and a new password istyped into the New Password and Re enter New Password textBoxes
+    And hit the change password button
+    And Pass  the current password and new password into the related textboxes and click on the update button
+    Then Click on the logout button and enter the new credentials into the email and username boxes.
+    And Click on the sign in button and verify that the user home is to open
+    Then Close the site
+
+  Scenario: It should be verified that the Update Address tab is accessed by using the edit icon in the Address list.
+    And Adress button is clicked
+    And Edit icon is clicked
+    Then verify that the Update Address tab is to be opened
+    Then Close the site
+
+
 
