@@ -193,7 +193,7 @@ public class HomePage {
 
     //Anasayfa Register link
     @FindBy(xpath = "//a[normalize-space()='/ Register']")
-    public WebElement registerLink;
+    public WebElement registerLinkk;
 
     //https://qa.trendlifebuy.com/profile/dashboard>My Coupon Linki
     @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[5]")
