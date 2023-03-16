@@ -225,4 +225,65 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//span[text()='Support Ticket']")
     public WebElement supportTicketDropdownMenu;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////********************* HASAN **********************************
+
+    @FindBy(xpath = "//div[@class='nice-select amaz_select3']")
+    public WebElement purchaseHistoryDropDown;
+
+    @FindBy(xpath = "(//*[text()='Pending Orders'])[2]")
+    public WebElement pendingOrders;
+
+    @FindBy(xpath = "(//*[text()='Confirmed Orders'])[2]")
+    public WebElement confirmedOrders;
+
+    @FindBy(xpath = "(//*[text()='Completed Orders'])[2]")
+    public WebElement completedOrders;
+
+    @FindBy(xpath = "(//*[text()='Refused/Cancelled Orders'])[2]")
+    public WebElement refusedCancelledOrders;
+
+    @FindBy(xpath = "//button[@id='home-tab']")
+    public WebElement butonAll;
+
+    @FindBy(xpath = "//button[@id='Pay-tab']")
+    public WebElement butonToPay;
+
+    @FindBy(xpath = "//button[@id='Ship-tab']")
+    public WebElement butonToShip;
+
+    @FindBy(xpath = "//button[@id='Receive-tab']")
+    public WebElement butonReveive;
+
+    @FindBy(xpath = "//div[@class='nice-select amaz_select5 open']")
+    public WebElement myOrderSelectDropDown;
+
+
+
+
 }
+
+
+
