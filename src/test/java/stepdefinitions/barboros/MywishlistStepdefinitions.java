@@ -69,15 +69,17 @@ public class MywishlistStepdefinitions {
 
         String[] speciality = option.split(",");
         int num = 0;
+        int count =0;
         while (num < speciality.length) {
             for (WebElement opt : options) {
-
                 if (opt.getText().contains(speciality[num])) {
-                    Assert.assertTrue(true);
-                    num++;
-                } else Assert.assertTrue(false);
+                    count++;
+                }
+                num++;
             }
         }
+        System.out.println(count);
+        Assert.assertEquals(speciality.length, count);
     }
 
     @Given("Verify that the {string} of Items to be displayed on the Wishlist page can be changed")
@@ -93,8 +95,6 @@ public class MywishlistStepdefinitions {
             String locator = "//li[@data-value='" + numbers[count] + "']";
             Driver.getDriver().findElement(By.xpath(locator)).click();
             String number = wishlist.currentNumberofItemBox.getText();
-            System.out.println(number);
-            System.out.println(numbers[count]);
             if (number.contains(numbers[count])) {
                 Assert.assertTrue(true);
             } else Assert.assertTrue(false);
@@ -129,7 +129,7 @@ public class MywishlistStepdefinitions {
                 ReusableMethods.bekle(2);
                 countCompare = wishlist.countOfCompareProduct.getText();
                 number = Integer.parseInt(countCompare);
-                Assert.assertTrue(number == num + 1);
+                Assert.assertEquals(number, num + 1);
                 ReusableMethods.bekle(2);
                 ReusableMethods.jsClick(wishlist.compareLink);
                 compare.resetCompareButton.click();
@@ -143,8 +143,6 @@ public class MywishlistStepdefinitions {
             ReusableMethods.jsClick(wishlist.compareLink);
             compare.resetCompareButton.click();
         }
-
-
     }
 
     @Given("click show icon and verify that the show window of the relevant product open")
@@ -154,7 +152,6 @@ public class MywishlistStepdefinitions {
         ReusableMethods.bekle(3);
         Assert.assertTrue(wishlist.showCloseIcon.isDisplayed());
         wishlist.showCloseIcon.click();
-
     }
 
     @Given("click delete icon and verify that the  relevant product is deleted")
@@ -169,7 +166,7 @@ public class MywishlistStepdefinitions {
         wishlist.popUpDeleteButton.click();
         ReusableMethods.bekle(2);
         products = wishlist.wishListProducts;
-        Assert.assertTrue(number == products.size() + 1);
+        Assert.assertEquals(number, products.size() + 1);
     }
 
 
@@ -193,7 +190,6 @@ public class MywishlistStepdefinitions {
                 Assert.assertTrue(false);
             }
         }
-
     }
 
     @Given("close the browser")
@@ -201,5 +197,4 @@ public class MywishlistStepdefinitions {
 
         Driver.closeDriver();
     }
-
 }

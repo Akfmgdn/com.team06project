@@ -7,7 +7,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class RegisteredUser {
+public class RegisteredUserStepdefinitions {
     HomePage home = new HomePage();
     LoginPage login = new LoginPage();
     CartPage cart = new CartPage();
@@ -19,7 +19,6 @@ public class RegisteredUser {
     MyWishlistPage wishlist = new MyWishlistPage();
 
 
-    //TESTS 1
     @Given("vverify the site,login link and succesfully logging")
     public void vverify_the_site_login_link_and_succesfully_logging() {
 
@@ -56,12 +55,10 @@ public class RegisteredUser {
     @Given("verify the Add to Card functions")
     public void verify_the_add_to_card_functions() {
 
-        ReusableMethods.jsClick(home.viewAllLink);
         ReusableMethods.hover(home.firstProduct);
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(3);
         ReusableMethods.jsClick(home.firstProduct);
         ReusableMethods.jsClick(home.addToCartLink);
-
     }
 
     @Given("click add to Cart icon and verify that the product is added")
@@ -71,7 +68,6 @@ public class RegisteredUser {
         try {
             ReusableMethods.bekle(1);
             wishlist.addToCartLinkPopup.click();
-            //ReusableMethods.bekle(1);
             wishlist.viewCart.click();
             String url = Driver.getDriver().getCurrentUrl();
             Assert.assertTrue(url.contains("cart"));
@@ -81,11 +77,9 @@ public class RegisteredUser {
             String url = Driver.getDriver().getCurrentUrl();
             Assert.assertTrue(url.contains("cart"));
         }
-
     }
 
 
-    // TESTS 2
     @Given("check out button and check out page verifications")
     public void check_out_button_and_check_out_page_verifications() {
 
@@ -94,7 +88,6 @@ public class RegisteredUser {
         ReusableMethods.jsClick(cart.proceedToCheckoutButton);
         String url = Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(url.contains("checkout"));
-
     }
 
     @Given("shipping button and shipping page verification")
@@ -105,8 +98,6 @@ public class RegisteredUser {
         String url = Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(url.contains("select_shipping"));
         Assert.assertTrue(ship.continueToPaymentButton.isDisplayed());
-
-
     }
 
     @Given("shipping method and payment page verification")
@@ -129,5 +120,14 @@ public class RegisteredUser {
         String orderText = order.orderedTextsLabel.getText();
         Assert.assertTrue(orderText.contains("Your order has been received"));
         Assert.assertTrue(order.orderIdLabel.isDisplayed());
+    }
+
+    @Given("ilk urunun ustune git add to cart tikla")
+    public void ilk_urunun_ustune_git_add_to_cart_tikla() {
+        ReusableMethods.bekle(3);
+        ReusableMethods.hover(home.firstProduct);
+        ReusableMethods.bekle(5);
+        home.addToCartLink.click();
+
     }
 }
