@@ -34,7 +34,7 @@ public class US_007_stepdefinitions {
 
     @Given("Register clicks")
     public void register_click() {
-        home.registerLink.click();
+        home.registerLinkk.click();
     }
     @Then("It is tested to be on the sign up page")
     public void it_is_tested_to_be_on_the_sign_up_page() {
