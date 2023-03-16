@@ -68,9 +68,6 @@ public class HomePage {
     @FindBy(xpath="(//div[@class='logo_img']")
     public WebElement logoImg;
 
-    @FindBy(xpath="(//*[text()='/ Register'])")
-    public WebElement registerLink;
-
     @FindBy(xpath="(//div[@class='main_header_media d-none d-xl-flex dynamic_svg']")
     public WebElement newUserZoneLink;
 
