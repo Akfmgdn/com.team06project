@@ -172,6 +172,143 @@ public class HomePageSteps {
         Assert.assertTrue(homePage.contactLink.isEnabled());
     }
 
+    @Given("Click on the allCategoriesDropdown")
+    public void click_on_the_all_categories_dropdown() {
+      homePage.allCategoriesDropdown.isDisplayed();
+      Assert.assertTrue(homePage.allCategoriesDropdown.isDisplayed());
+    }
+    @Given("Verifey the drop down is active")
+    public void verifey_the_drop_down_is_active() {
+       homePage.allCategoriesDropdown.isEnabled();
+       Assert.assertTrue(homePage.allCategoriesDropdown.isEnabled());
+    }
+
+    @Given("Click on the computer accessories link")
+    public void click_on_the_computer_accessories_link() {
+        homePage.computerAccessoriesLink.isDisplayed();
+        Assert.assertTrue(homePage.computerAccessoriesLink.isEnabled());
+    }
+    @Given("Verify the computer accessories link is active")
+    public void verify_the_computer_accessories_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Click on the electronics devices link")
+    public void click_on_the_electronics_devices_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Given("Verify electronics devices link is  active")
+    public void verify_electronics_devices_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Given("Click on the watches accessories link")
+    public void click_on_the_watches_accessories_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Verify watches accessories  link is active")
+    public void verify_watches_accessories_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("click on the fashions link")
+    public void click_on_the_fashions_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Verify fashions link is active")
+    public void verify_fashions_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Click on the toys kids babies link")
+    public void click_on_the_toys_kids_babies_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Verify toys kids babies link is active")
+    public void verify_toys_kids_babies_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Click on the bag shoes link")
+    public void click_on_the_bag_shoes_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Verify bag shoes link is active")
+    public void verify_bag_shoes_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Click on the life style home link")
+    public void click_on_the_life_style_home_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Verify life style home link is active")
+    public void verify_life_style_home_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Given("Click on the  tv home appliances link")
+    public void click_on_the_tv_home_appliances_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Verify tv home appliances link is active")
+    public void verify_tv_home_appliances_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Click on the auto mobiles bikes link")
+    public void click_on_the_auto_mobiles_bikes_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("Verify  auto mobiles bikes link is active")
+    public void verify_auto_mobiles_bikes_link_is_active() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
