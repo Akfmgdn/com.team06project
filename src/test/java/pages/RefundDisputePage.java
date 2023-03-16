@@ -12,7 +12,7 @@ public class RefundDisputePage {
 
 
     @FindBy(xpath = "//a[@class='position-relative d-flex align-items-center active']")
-   public WebElement RefundDisputePage;
+   public WebElement refundDisputePagelink;
 
     @FindBy(xpath = "//h4[contains(@class,'font_16 f_w_700 text-nowrap m-0 theme_hover')]")
     public WebElement iadeUrunText;
