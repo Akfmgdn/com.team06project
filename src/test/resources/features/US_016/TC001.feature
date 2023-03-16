@@ -1,4 +1,4 @@
-@hasan
+
 Feature: login testi
 
   Scenario: logine giris
@@ -15,7 +15,7 @@ Feature: login testi
 
       Given trendlifebuy anasayfaya gider
       Then Dasboard sayfasinana click yapar
-      Then puschhase history gittigi gorunur
+      Then puschhase history click yapar
 
 
 
@@ -23,7 +23,7 @@ Feature: login testi
 
     Given Purchase History filtreler
     Then All History acilir penceresinde seceneklerine gore filtrelendigi dogrulanir
-    And sayfayi kapatir
+
 
 
 

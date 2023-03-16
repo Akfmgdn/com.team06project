@@ -10,30 +10,33 @@ Feature: Bir kullanici olarak siparislerimle ilgili islemleri gerceklestirebilme
     And login butonuna click yapar
 
     Given dasboard texte gidilir
-    Then my order linkinin order sayfasina yonlenir
-    And sayfayi kapatir
+    Then my order linkinin order sayfasina click yapar
+
 
 
     Scenario:TC002 My Order sayfasinda My Order listesindeki ürünler All,To Pay, To Ship, To Recieve butonlari yardimi ile filtreleme yapildigi dogrulanmali
 
-        Then  my order sayfasina gider
-        Then  My Order sayfasinda My Order listesindeki urunler All,To Pay, To Ship, To Recieve butonlari yardimi ile filtreleme yapildigi dogrulanir
+        Given My Order sayfasinda My Order listesindeki urunler All,To Pay, To Ship, To Recieve butonlari yardimi ile filtreleme yapildigi dogrulanir
+        Then   All butonuna click yapar
+        And    To Pay butonuna click yapar
+        And    To Recieve butonuna click yapar
+        And    filtreleme dogrulanir
 
 
       Scenario: TC003 My Order sayfasinda My Order listesindeki ürünlerin Order ID, Status, Order date, Order Amount ve Paid By bilgilerinin goruntulendigi dogrulanmali
 
-        Then my order linkide gider
+        Then my order linkide click yapar
         And urunlerin Order ID, Status, Order date, Order Amount ve Paid By gorunur
 
         Scenario:TC004 Order sayfasinda gösterilecek ürünlerin adedini  (last 5 orders, last 10 orders, last 20 orders, last 40 orders) belirlenebildigi dogrulanmali.
 
           Given order sayfasina gider
-          Then ast 5 orders, last 10 orders, last 20 orders, last 40 orders) belirlenebildigi gorulur
-          And sayfayi kapatir
+          Then ast bes orders, last on orders, last yirmi orders, last kirk orders) belirlenebildigi gorulur
+
 
           Scenario: TC005 Görüntülenen ürünler eger tek sayfada degilse sayfalar arasinda (prew-next yapilarak) gecislerin yapilabildigi dogrulanmali.
 
-            Given gorunen urunleri tek tek dogrulanir
+            Given sayfalardaki urunler tek tek dogrulanir
             Then sayfayi kapatir
 
 
