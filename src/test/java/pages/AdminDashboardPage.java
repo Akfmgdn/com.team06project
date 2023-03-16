@@ -13,6 +13,9 @@ public class AdminDashboardPage {
     // US31
     // US31-TC3101
 
+    @FindBy(xpath = "//button[@id='sign_in_btn']")
+    public WebElement adminSignInButton;
+
     @FindBy(xpath = "(//*[text()='Products'])[1]")
     public WebElement productsLink;
 
@@ -88,13 +91,22 @@ public class AdminDashboardPage {
     public WebElement dateOfBirthText;
 
     // US31-TC3106
+
+    @FindBy(xpath = "//button[@id='update_info']")
+    public WebElement updateButton;
+
+    @FindBy(xpath = "//div[text()='Updated successfully!']")
+    public WebElement updateMessageText;
+
+    // US31-TC3107
     @FindBy(xpath = "(//a[@class='nav-link'])[2]")
     public WebElement adressButton;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]")
+    public WebElement addressInformationText;
 
 
-
-    // US31-TC3107
+    // US31-TC3108
     @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[1]")
     public WebElement purchase;
 
