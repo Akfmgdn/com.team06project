@@ -40,10 +40,10 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='product__meta text-center']")
     public List<WebElement> listedProductsonHomepage;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div[1]/div/div[5]/div")
+    @FindBy(xpath = "(//*[@src='https://qa.trendlifebuy.com/public/uploads/images/21-12-2022/63a402d28afb4.jpeg'])[1]")
     public WebElement firstProduct;
 
-    @FindBy(xpath = "(//*[text()='Add To Cart'])[2]")
+    @FindBy(xpath = "(//*[@data-product-id='8'])[2]")
     public WebElement addToCartLink;
 
     @FindBy(xpath = "(//*[text()='Cart ('])[1]")

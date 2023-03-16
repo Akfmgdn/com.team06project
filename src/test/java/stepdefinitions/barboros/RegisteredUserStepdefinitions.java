@@ -2,6 +2,8 @@ package stepdefinitions.barboros;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -125,8 +127,12 @@ public class RegisteredUserStepdefinitions {
     @Given("ilk urunun ustune git add to cart tikla")
     public void ilk_urunun_ustune_git_add_to_cart_tikla() {
         ReusableMethods.bekle(3);
-        ReusableMethods.hover(home.firstProduct);
-        ReusableMethods.bekle(5);
+        Actions act =new Actions(Driver.getDriver());
+        act.sendKeys(Keys.PAGE_DOWN).perform();
+        //ReusableMethods.bekle();
+        act.moveToElement(home.firstProduct).perform();
+        //ReusableMethods.hover(home.firstProduct);
+        //ReusableMethods.bekle(5);
         home.addToCartLink.click();
 
     }
