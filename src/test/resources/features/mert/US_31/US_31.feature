@@ -2,7 +2,7 @@ Feature: US_31 As an administrator, in order to access my profile information an
 
   Background:
     Given Login as an admin
-
+@wip1
   Scenario: TC_3101 Can see profile icon
 
     And Is visible profile icon
