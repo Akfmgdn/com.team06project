@@ -27,8 +27,8 @@ Feature:US_21 TEST OF Refund&Dispute PAGE
   Scenario:TC_2105  Start,Processing and Complete states are active
     Then On the opened details page,it should be verified that at least one of the Start,Processing and Complete states are active.
 
-  Scenario:
+  Scenario:TC_2106 Texts with explanations of Start
     Then Verify that Texts with explanations of Start,Processing and Complete states are visible
 
-  Scenario:
+  Scenario:TC_2107 Pick Up Info information is displayed
     Then It should be verified that the Pick Up Info information is displayed on the details page that opens.

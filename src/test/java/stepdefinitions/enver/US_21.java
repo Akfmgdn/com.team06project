@@ -98,5 +98,19 @@ public class US_21 {
 
     @Then("On the opened details page,it should be verified that at least one of the Start,Processing and Complete states are active.")
     public void onTheOpenedDetailsPageItShouldBeVerifiedThatAtLeastOneOfTheStartProcessingAndCompleteStatesAreActive() {
+
+    }
+
+    @Then("Verify that Texts with explanations of Start,Processing and Complete states are visible")
+    public void verifyThatTextsWithExplanationsOfStartProcessingAndCompleteStatesAreVisible() {
+        
+        Assert.assertTrue(refundDisputePage.StartText.isDisplayed());
+        Assert.assertTrue(refundDisputePage.processingtext.isDisplayed());
+        Assert.assertTrue(refundDisputePage.completetext.isDisplayed());
+    }
+
+    @Then("It should be verified that the Pick Up Info information is displayed on the details page that opens.")
+    public void ıtShouldBeVerifiedThatThePickUpInfoInformationIsDisplayedOnTheDetailsPageThatOpens() {
+        Assert.assertTrue(refundDisputePage.PickUpInfo.isDisplayed());
     }
 }

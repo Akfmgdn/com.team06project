@@ -41,6 +41,12 @@ public class RefundDisputePage {
     @FindBy(xpath = "//p[normalize-space()='Refund Started']")
     public WebElement StartText;
 
+    @FindBy(xpath = "//p[normalize-space()='Refund Processing']")
+    public  WebElement processingtext;
+
+    @FindBy(xpath = "//p[normalize-space()='Refund Complete']")
+    public  WebElement completetext;
+
     @FindBy(xpath = "//h4[@class='font_16 f_w_700 text-nowrap m-0 theme_hover']")
     public WebElement PickUpInfo;
 }
