@@ -1,6 +1,5 @@
 Feature: Home Page Tests
 
-
   @wip
   Scenario: Url and Title verification
 
