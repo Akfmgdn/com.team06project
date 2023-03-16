@@ -26,8 +26,14 @@ public class RefundDisputePage {
     @FindBy(xpath = "//h4[contains(text(),'Order amount')]")
     public WebElement OrderAmountText;
 
+    @FindBy(xpath = "//h4[contains(text(),'Request Sent date')]")
+    public WebElement RequestSentdate;
+
     @FindBy(xpath = "//a[contains(@class,'amaz_primary_btn style2 text-nowrap')]")
     public WebElement viewDetailButton;
+
+    @FindBy(xpath = "//div[contains(@class,'d-flex align-items-center flex-wrap gap_5 mb_7')]//p[contains(@class,'font_14 f_w_400 m-0 lh-base')][normalize-space()='Pending']")
+    public WebElement actualstation;
 
     @FindBy(xpath = "//div[@class='order_details_progress style2']//div[1]//div[1]//*[name()='svg']")
     public WebElement startStageVisible;

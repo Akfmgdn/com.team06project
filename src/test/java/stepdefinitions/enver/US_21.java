@@ -5,10 +5,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.*;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class US_21 {
     HomePage homePage = new HomePage();
@@ -72,11 +76,27 @@ public class US_21 {
     }
 
 
+    @Then("Verify that the Order ID,Order Date, Status, Request Sent Date and Order Amount information are visible RefundList.")
+    public void verifyThatTheOrderIDOrderDateStatusRequestSentDateAndOrderAmountInformationAreVisibleRefundList()
+    {Assert.assertTrue(refundDisputePage.orderIdText.isDisplayed());
+        Assert.assertTrue(refundDisputePage.statusText.isDisplayed());
+        Assert.assertTrue(refundDisputePage.OrderAmountText.isDisplayed());
+        Assert.assertTrue(refundDisputePage.RequestSentdate.isDisplayed());
+
+        }
 
 
+    @Then("opened page with the View Details button, it should be verified that the current status of the order whose return request is opened can be viewed.")
+    public void openedPageWithTheViewDetailsButtonItShouldBeVerifiedThatTheCurrentStatusOfTheOrderWhoseReturnRequestIsOpenedCanBeViewed() {
+        ReusableMethods.scrollDownByPixel(350);
+        Assert.assertTrue(refundDisputePage.viewDetailButton.isDisplayed());
+        ReusableMethods.jsClick(refundDisputePage.viewDetailButton);
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(refundDisputePage.actualstation.isDisplayed());
+    }
 
 
-
-
-
+    @Then("On the opened details page,it should be verified that at least one of the Start,Processing and Complete states are active.")
+    public void onTheOpenedDetailsPageItShouldBeVerifiedThatAtLeastOneOfTheStartProcessingAndCompleteStatesAreActive() {
+    }
 }
