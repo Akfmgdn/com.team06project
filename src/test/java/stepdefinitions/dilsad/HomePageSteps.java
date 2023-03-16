@@ -108,13 +108,13 @@ public class HomePageSteps {
     }
     @Given("Click on the register link")
     public void click_on_the_register_link() {
-        homePage.registerLink.isDisplayed();
-        Assert.assertTrue(homePage.registerLink.isDisplayed());
+        homePage.registerLinkk.isDisplayed();
+        Assert.assertTrue(homePage.registerLinkk.isDisplayed());
     }
     @Given("Verifed the register link")
     public void verifed_the_register_link() {
-        homePage.registerLink.isEnabled();
-        Assert.assertTrue(homePage.registerLink.isEnabled());
+        homePage.registerLinkk.isEnabled();
+        Assert.assertTrue(homePage.registerLinkk.isEnabled());
 
     }
     @Given("Click on the new user zone link")

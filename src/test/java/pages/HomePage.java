@@ -68,8 +68,6 @@ public class HomePage {
     @FindBy(xpath="(//div[@class='logo_img']")
     public WebElement logoImg;
 
-   // @FindBy(xpath="(//*[text()='/ Register'])")
-    //public WebElement registerLink;
 
     @FindBy(xpath="(//div[@class='main_header_media d-none d-xl-flex dynamic_svg']")
     public WebElement newUserZoneLink;
@@ -196,7 +194,7 @@ public class HomePage {
 
     //Anasayfa Register link
     @FindBy(xpath = "//a[normalize-space()='/ Register']")
-    public WebElement registerLink;
+    public WebElement registerLinkk;
 
     //https://qa.trendlifebuy.com/profile/dashboard>My Coupon Linki
     @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[5]")
