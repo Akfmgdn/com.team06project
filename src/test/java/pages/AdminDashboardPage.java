@@ -149,13 +149,16 @@ public class AdminDashboardPage {
     @FindBy(xpath = "(//input[@placeholder='Search...'])[4]")
     public WebElement citySearchTextBox;
 
+    @FindBy(xpath = "//li[text()='Aberdeen']")
+    public WebElement citySelectedLink;
+
     @FindBy(xpath = "//input[@placeholder='Postal code']")
     public WebElement postalCodeTextBox;
 
     @FindBy(xpath = "(//button[text()='Save'])[3]")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//tbody/tr[2]/td[2]")
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]")
     public WebElement newAddressText;
 
 
