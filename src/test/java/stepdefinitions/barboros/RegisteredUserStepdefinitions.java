@@ -63,19 +63,27 @@ public class RegisteredUserStepdefinitions {
         ReusableMethods.jsClick(home.addToCartLink);
     }
 
-    @Given("click add to Cart icon and verify that the product is added")
-    public void click_add_to_cart_icon_and_verify_that_the_product_is_added() {
+    @Given("hover over a product and click add to Cart icon and verify that the product is added")
+    public void hover_over_a_product_and_click_add_to_cart_icon_and_verify_that_the_product_is_added() {
 
-        ReusableMethods.jsClick(wishlist.addToCartLink);
+        ReusableMethods.bekle(3);
+        Actions act =new Actions(Driver.getDriver());
+        act.sendKeys(Keys.PAGE_DOWN).perform();
+        act.moveToElement(home.firstProduct).perform();
+        home.addToCartLink.click();
+       // ReusableMethods.jsClick(wishlist.addToCartLink);
         try {
             ReusableMethods.bekle(1);
-            wishlist.addToCartLinkPopup.click();
-            wishlist.viewCart.click();
+            home.addToCartPopupButton.click();
+            ReusableMethods.bekle(1);
+            Assert.assertTrue(home.viewCart.isDisplayed());
+            home.viewCart.click();
             String url = Driver.getDriver().getCurrentUrl();
             Assert.assertTrue(url.contains("cart"));
         } catch (Exception e) {
             ReusableMethods.bekle(2);
-            wishlist.viewCart.click();
+            Assert.assertTrue(home.viewCart.isDisplayed());
+            home.viewCart.click();
             String url = Driver.getDriver().getCurrentUrl();
             Assert.assertTrue(url.contains("cart"));
         }
@@ -85,7 +93,8 @@ public class RegisteredUserStepdefinitions {
     @Given("check out button and check out page verifications")
     public void check_out_button_and_check_out_page_verifications() {
 
-        home.cartButton.click();
+        //home.cartButton.click();
+        ReusableMethods.bekle(2);
         Assert.assertTrue(cart.proceedToCheckoutButton.isDisplayed());
         ReusableMethods.jsClick(cart.proceedToCheckoutButton);
         String url = Driver.getDriver().getCurrentUrl();
@@ -124,16 +133,4 @@ public class RegisteredUserStepdefinitions {
         Assert.assertTrue(order.orderIdLabel.isDisplayed());
     }
 
-    @Given("ilk urunun ustune git add to cart tikla")
-    public void ilk_urunun_ustune_git_add_to_cart_tikla() {
-        ReusableMethods.bekle(3);
-        Actions act =new Actions(Driver.getDriver());
-        act.sendKeys(Keys.PAGE_DOWN).perform();
-        //ReusableMethods.bekle();
-        act.moveToElement(home.firstProduct).perform();
-        //ReusableMethods.hover(home.firstProduct);
-        //ReusableMethods.bekle(5);
-        home.addToCartLink.click();
-
-    }
 }

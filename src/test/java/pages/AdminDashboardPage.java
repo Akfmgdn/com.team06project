@@ -13,6 +13,28 @@ public class AdminDashboardPage {
     // US31
     // US31-TC3101
 
+    @FindBy(xpath = "//button[@id='sign_in_btn']")
+    public WebElement adminSignInButton;
+
+    @FindBy(xpath = "(//*[text()='Products'])[1]")
+    public WebElement productsLink;
+
+    @FindBy(xpath = "//*[text()='Product List']")
+    public WebElement productsListLink;
+
+    @FindBy(xpath = "(//*[text()='Alert List'])[1]")
+    public WebElement productAlertListLink;
+
+    @FindBy(xpath = "//a[@id='product_stock_out_id']")
+    public WebElement productOutOfStockList;
+
+    @FindBy(xpath = "(//*[text()='Disabled Product List'])[1]")
+    public WebElement productDisabledList;
+
+    @FindBy(xpath = "(//*[text()='Product By SKU'])[1]")
+    public WebElement productBySkuList;
+
+
     @FindBy(xpath = "((//*[text()='Dashboard'])[2]")
     public WebElement dashboardtextLink;
 
@@ -21,6 +43,22 @@ public class AdminDashboardPage {
 
     @FindBy(xpath = "//*[text()='My Order']")
     public WebElement myOrderLink;
+
+    @FindBy(xpath = "//div[@class='nice-select amaz_select5 open']")
+    public WebElement lastOrderDropDown;
+
+    @FindBy(xpath = "(//div[@class='nice-select-search-box'])[1]")
+    public WebElement searchBoxOrders;
+
+    @FindBy(xpath = "(//*[text()='Last 10 orders'])[2]")
+    public WebElement lastOrderDropDownLast10;
+
+    @FindBy(xpath = "(//*[text()='Last 20 orders'])[2]")
+    public WebElement lastOrderDropDownLast20;
+
+    @FindBy(xpath = "(//*[text()='Last 40 orders'])[2]")
+    public WebElement lastOrderDropDownLast40;
+
 
     @FindBy(xpath = "//div[@class='user_avatar_div']")
     public WebElement profileIconLink;
@@ -53,13 +91,22 @@ public class AdminDashboardPage {
     public WebElement dateOfBirthText;
 
     // US31-TC3106
+
+    @FindBy(xpath = "//button[@id='update_info']")
+    public WebElement updateButton;
+
+    @FindBy(xpath = "//div[text()='Updated successfully!']")
+    public WebElement updateMessageText;
+
+    // US31-TC3107
     @FindBy(xpath = "(//a[@class='nav-link'])[2]")
     public WebElement adressButton;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]")
+    public WebElement addressInformationText;
 
 
-
-    // US31-TC3107
+    // US31-TC3108
     @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[1]")
     public WebElement purchase;
 
@@ -178,4 +225,68 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//span[text()='Support Ticket']")
     public WebElement supportTicketDropdownMenu;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////********************* HASAN **********************************
+
+    @FindBy(xpath = "//div[@class='nice-select amaz_select3']")
+    public WebElement purchaseHistoryDropDown;
+
+    @FindBy(xpath = "(//*[text()='Pending Orders'])[2]")
+    public WebElement pendingOrders;
+
+    @FindBy(xpath = "(//*[text()='Confirmed Orders'])[2]")
+    public WebElement confirmedOrders;
+
+    @FindBy(xpath = "(//*[text()='Completed Orders'])[2]")
+    public WebElement completedOrders;
+
+    @FindBy(xpath = "(//*[text()='Refused/Cancelled Orders'])[2]")
+    public WebElement refusedCancelledOrders;
+
+    @FindBy(xpath = "//button[@id='home-tab']")
+    public WebElement butonAll;
+
+    @FindBy(xpath = "//button[@id='Pay-tab']")
+    public WebElement butonToPay;
+
+    @FindBy(xpath = "//button[@id='Ship-tab']")
+    public WebElement butonToShip;
+
+    @FindBy(xpath = "//button[@id='Receive-tab']")
+    public WebElement butonReveive;
+
+    @FindBy(xpath = "//div[@class='nice-select amaz_select5 open']")
+    public WebElement myOrderSelectDropDown;
+
+
+
+
+
+
+
 }
+
+
+
