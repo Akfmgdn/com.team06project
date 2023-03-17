@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class AdminDashboardPage {
 
     public AdminDashboardPage(){
@@ -12,6 +14,9 @@ public class AdminDashboardPage {
     }
     // US31
     // US31-TC3101
+
+    @FindBy(xpath = "//button[@id='sign_in_btn']")
+    public WebElement adminSignInButton;
 
     @FindBy(xpath = "(//*[text()='Products'])[1]")
     public WebElement productsLink;
@@ -88,13 +93,22 @@ public class AdminDashboardPage {
     public WebElement dateOfBirthText;
 
     // US31-TC3106
+
+    @FindBy(xpath = "//button[@id='update_info']")
+    public WebElement updateButton;
+
+    @FindBy(xpath = "//div[text()='Updated successfully!']")
+    public WebElement updateMessageText;
+
+    // US31-TC3107
     @FindBy(xpath = "(//a[@class='nav-link'])[2]")
     public WebElement adressButton;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]")
+    public WebElement addressInformationText;
 
 
-
-    // US31-TC3107
+    // US31-TC3108
     @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[1]")
     public WebElement purchase;
 
@@ -267,6 +281,37 @@ public class AdminDashboardPage {
 
     @FindBy(xpath = "//div[@class='nice-select amaz_select5 open']")
     public WebElement myOrderSelectDropDown;
+
+
+
+
+
+    //=====================Faruk's locator zone===========================\\
+
+
+    @FindBy(id="traffic-chartt")
+    public WebElement productsChart;
+
+    @FindBy(id="traffic-chart2")
+    public WebElement ordersSummaryChart;
+
+    @FindBy(id="traffic-chart4")
+    public WebElement guestAuthorizedOrderTodayChart;
+
+    @FindBy(id="traffic-chartt5")
+    public WebElement todayOrdersummaryChart;
+
+    @FindBy(xpath = "//div[@class='chart_pie_box']")
+    public List<WebElement> chartList;
+
+    @FindBy(xpath = "//div[@class='sales_value_legend']/ul/li/div/span")
+    public List<WebElement> dataNameValueLegendList;
+
+    @FindBy(xpath = "//div[@class='sales_value_legend']/ul/li/span")
+    public List<WebElement> colorLegendList;
+
+    @FindBy(xpath = "//div[@class='main-title d-md-flex']")
+    public List<WebElement> mainTitleListUnderGraphs;
 
 
 

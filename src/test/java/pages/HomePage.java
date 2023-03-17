@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import javax.xml.xpath.XPath;
+
 import java.util.List;
 
 public class HomePage {
@@ -40,10 +40,10 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='product__meta text-center']")
     public List<WebElement> listedProductsonHomepage;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div[1]/div/div[5]/div")
+    @FindBy(xpath = "(//*[@src='https://qa.trendlifebuy.com/public/uploads/images/21-12-2022/63a402d28afb4.jpeg'])[1]")
     public WebElement firstProduct;
 
-    @FindBy(xpath = "(//*[text()='Add To Cart'])[2]")
+    @FindBy(xpath = "(//*[@data-product-id='8'])[2]")
     public WebElement addToCartLink;
 
     @FindBy(xpath = "(//*[text()='Cart ('])[1]")
@@ -67,6 +67,7 @@ public class HomePage {
 
     @FindBy(xpath="(//div[@class='logo_img']")
     public WebElement logoImg;
+
 
     @FindBy(xpath="(//div[@class='main_header_media d-none d-xl-flex dynamic_svg']")
     public WebElement newUserZoneLink;
@@ -193,10 +194,19 @@ public class HomePage {
 
     //Anasayfa Register link
     @FindBy(xpath = "//a[normalize-space()='/ Register']")
-    public WebElement registerLink;
+    public WebElement registerLinkk;
 
     //https://qa.trendlifebuy.com/profile/dashboard>My Coupon Linki
     @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[5]")
     public WebElement myCouponsLink;
+
+    @FindBy(xpath = "//*[@id='add_to_cart_btn_modal']")
+    public WebElement addToCartPopupButton;
+
+    @FindBy(xpath = "//*[text()='View cart']")
+    public WebElement viewCart;
+
+    @FindBy(xpath = "(//a[@id='wishlistbtn_8'])[1]")
+    public WebElement addToWishlistPopupButton;
 
 }

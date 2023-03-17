@@ -1,4 +1,4 @@
-@hasan
+
 Feature: US_035 Bir yönetici olarak sitedeki ürünler listelerine erisebilmek
 
   Scenario: login testi deneme
