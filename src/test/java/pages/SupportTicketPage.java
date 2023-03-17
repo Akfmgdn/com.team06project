@@ -13,6 +13,8 @@ public class SupportTicketPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+
     //US 41 support ticket main Button
     @FindBy(xpath = "(//*[text()='Support Ticket'])[1]")
     public WebElement mainSupportTicketLink;
@@ -150,5 +152,7 @@ public class SupportTicketPage {
 
     @FindBy(xpath = "(//input[@value='Delete'])[1]")
     public WebElement deletePupupButton;
+
+
 
 }

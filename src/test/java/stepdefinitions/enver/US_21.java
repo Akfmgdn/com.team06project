@@ -24,9 +24,9 @@ public class US_21 {
     Actions actions = new Actions(Driver.getDriver());
 
 
+
     @Given("Go to  main site")
-    public void goToMainSite() {
-        Driver.getDriver().get("https://qa.trendlifebuy.com/");
+    public void goToMainSite() {Driver.getDriver().get("https://qa.trendlifebuy.com/");
     }
 
 
@@ -44,7 +44,7 @@ public class US_21 {
 
     @Then("Pass in the credentials and click on submit button")
     public void passInTheCredentialsAndClickOnSubmitButton() {
-        myWalletPage.loginEmailBox.sendKeys("user133@trendlifebuy.com");
+        myWalletPage.loginEmailBox.sendKeys("user114@trendlifebuy.com");
         myWalletPage.loginPasswordBox.sendKeys("Trendlife114");
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].click();", myWalletPage.signInButton);
@@ -113,4 +113,5 @@ public class US_21 {
     public void ıtShouldBeVerifiedThatThePickUpInfoInformationIsDisplayedOnTheDetailsPageThatOpens() {
         Assert.assertTrue(refundDisputePage.PickUpInfo.isDisplayed());
     }
+
 }
