@@ -13,8 +13,7 @@ import utilities.ReusableMethods;
 public class US_23 {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
-    MyWalletPage myWalletPage = new MyWalletPage();
-    UserSupportTicketPage userSupportTicketPage = new UserSupportTicketPage();
+        UserSupportTicketPage userSupportTicketPage = new UserSupportTicketPage();
 
     @Given("Go to the website")
     public void go_to_the_website() {
@@ -49,7 +48,12 @@ public class US_23 {
         ReusableMethods.clickWithTimeOut(userSupportTicketPage.supportTicketButton, 2);
     }
 
+    @Given("Test if all submitted list is visible.")
+    public void test_if_all_submitted_list_is_visible() {
 
+        Assert.assertTrue(userSupportTicketPage.allSubmittedTicketList.isDisplayed());
+        Driver.closeDriver();
+    }
     @Given("Test if support ticket page is visible")
     public void test_if_support_ticket_page_is_visible() {
         String expected = "https://qa.trendlifebuy.com/support-ticket";
@@ -59,6 +63,7 @@ public class US_23 {
 
 
     }
+
 
     @Given("Test if Tickets are listed with the Ticket ID, Subject, Priority, Last Update information.")
     public void test_if_tickets_are_listed_with_the_ticket_id_subject_priority_last_update_information() {
