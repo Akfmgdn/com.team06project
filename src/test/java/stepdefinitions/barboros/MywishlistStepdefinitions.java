@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.ComparePage;
@@ -45,7 +46,14 @@ public class MywishlistStepdefinitions {
 
     @Given("click wishlist link verify that the link leads to the MywishlistPage")
     public void click_wishlist_link_verify_that_the_link_leads_to_the_mywishlist_page() {
-        home.wishListLink.click();
+        ReusableMethods.bekle(1);
+        Actions act =new Actions(Driver.getDriver());
+        act.sendKeys(Keys.PAGE_DOWN).perform();
+        act.moveToElement(home.firstProduct).perform();
+        act.sendKeys(Keys.ARROW_UP).sendKeys(Keys.ARROW_UP).perform();
+        ReusableMethods.jsClick(home.addToWishlistPopupButton);
+
+        ReusableMethods.jsClick(home.wishListLink);
         String wishlistUrl = Driver.getDriver().getCurrentUrl();
         String expectedData = "wishlist";
         Assert.assertTrue(wishlistUrl.contains(expectedData));

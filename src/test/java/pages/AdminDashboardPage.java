@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class AdminDashboardPage {
 
     public AdminDashboardPage(){
@@ -285,6 +287,34 @@ public class AdminDashboardPage {
 
 
 
+
+
+    //=====================Faruk's locator zone===========================\\
+
+
+    @FindBy(id="traffic-chartt")
+    public WebElement productsChart;
+
+    @FindBy(id="traffic-chart2")
+    public WebElement ordersSummaryChart;
+
+    @FindBy(id="traffic-chart4")
+    public WebElement guestAuthorizedOrderTodayChart;
+
+    @FindBy(id="traffic-chartt5")
+    public WebElement todayOrdersummaryChart;
+
+    @FindBy(xpath = "//div[@class='chart_pie_box']")
+    public List<WebElement> chartList;
+
+    @FindBy(xpath = "//div[@class='sales_value_legend']/ul/li/div/span")
+    public List<WebElement> dataNameValueLegendList;
+
+    @FindBy(xpath = "//div[@class='sales_value_legend']/ul/li/span")
+    public List<WebElement> colorLegendList;
+
+    @FindBy(xpath = "//div[@class='main-title d-md-flex']")
+    public List<WebElement> mainTitleListUnderGraphs;
 
 
 

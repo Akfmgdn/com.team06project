@@ -13,6 +13,8 @@ public class SupportTicketPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+
     //US 41 support ticket main Button
     @FindBy(xpath = "(//*[text()='Support Ticket'])[1]")
     public WebElement mainSupportTicketLink;
@@ -139,8 +141,8 @@ public class SupportTicketPage {
     @FindBy(xpath = "(//button[@class='primary-btn small fix-gr-bg custom_plus_btn'])")
     public WebElement addBrowserButton;
 
-    @FindBy(xpath = "//a[@class='primary_input_gray form-control pt-15']")
-    public WebElement loadedFile;
+    @FindBy(xpath = "//div[@class='primary_input mb-25']")
+    public List<WebElement> loadedFile;
 
     @FindBy(xpath = "(//div[@class='dropdown-menu dropdown-menu-right show'])/a[3]")
     public WebElement deleteLink;
@@ -150,5 +152,7 @@ public class SupportTicketPage {
 
     @FindBy(xpath = "(//input[@value='Delete'])[1]")
     public WebElement deletePupupButton;
+
+
 
 }
