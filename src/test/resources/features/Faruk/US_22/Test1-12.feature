@@ -54,7 +54,6 @@ Feature:Dashboard test
     And Click on the sign in button and verify that the user home is to open
     Then Close the site
 
-
   Scenario: It should be verified that the Update Address tab is accessed by using the edit icon in the Address list.
     And Adress button is clicked
     And Edit icon is clicked

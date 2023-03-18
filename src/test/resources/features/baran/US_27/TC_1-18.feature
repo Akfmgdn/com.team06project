@@ -4,8 +4,8 @@ Feature: Registered User tests 2
   Scenario: 1. login, listed products and Add to Card verific
     * vverify the site,login link and succesfully logging
     * verify the products are displayed
-    * click wishlink and hover over a product
-    * click add to Cart icon and verify that the product is added
+    #* click wishlink and hover over a product
+    * hover over a product and click add to Cart icon and verify that the product is added
 
   @brn4
   Scenario: 2. check out page
@@ -29,7 +29,10 @@ Feature: Registered User tests 2
     * close the browser
 
 
+<<<<<<< HEAD
 
   Scenario:
     * login to the website
     * ilk urunun ustune git add to cart tikla
+=======
+>>>>>>> main
