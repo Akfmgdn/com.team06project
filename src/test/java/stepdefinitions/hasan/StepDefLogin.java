@@ -1,5 +1,5 @@
 
-package stepdefinitions.hasan.StepDefhasan;
+package stepdefinitions.hasan;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
