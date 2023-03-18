@@ -2,7 +2,6 @@
 
 Feature: US_009 As a user, I would like to have a page where I can compare similar products on the site.
 
- @bugHunter
   Scenario: TC_001 It should be verified that the products that users put on the Compare page while shopping are displayed side by side with their pictures and content information.
 
    And trendlifebuy goes to homepage

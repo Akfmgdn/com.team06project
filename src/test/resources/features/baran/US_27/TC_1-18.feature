@@ -29,10 +29,9 @@ Feature: Registered User tests 2
     * close the browser
 
 
-<<<<<<< HEAD
+
 
   Scenario:
     * login to the website
     * ilk urunun ustune git add to cart tikla
-=======
->>>>>>> main
+
