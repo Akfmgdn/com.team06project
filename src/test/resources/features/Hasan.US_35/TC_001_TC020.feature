@@ -14,7 +14,8 @@ Feature: US_035 Bir yönetici olarak sitedeki ürünler listelerine erisebilmek
     Then Products menusune clikc yapar
 
     Scenario: TC002 Product sayfasindan Product Listesindeki linkleri görünür
-      Given  Product List, Alert List
+
+     Given  Product List, Alert List
       Then productOutOfStockList click yapar
       And productDisabledList click yapar
       And productBySkuList click yapar
@@ -33,6 +34,11 @@ Feature: US_035 Bir yönetici olarak sitedeki ürünler listelerine erisebilmek
         And linklerin listelendigini dogrulanir
         And sayfayi kapatir
 
+
+      Scenario: TC004 Quick Search TextBox'i ile Product List icerisinde arama yapma testi
+
+        Given  Product Listi Quick Search arama yapar
+        Then quick search click yapar
 
 
 

@@ -11,25 +11,25 @@ Feature: Registered User tests 2
   Scenario: 2. check out page
     * check out button and check out page verifications
 
-  @brn4
+
   Scenario: 3. shipping button and page verification
     * shipping button and shipping page verification
 
-  @brn4
+
   Scenario: 4. shipping method and payment page
     * shipping method and payment page verification
 
-  @brn4
+
   Scenario: 5. payment method and summary text
     * payment method order summary and pay now button verification
 
-  @brn4
+
   Scenario: 6. order summary page
     * verification of order summary page
     * close the browser
 
 
-  @wib
+
   Scenario:
     * login to the website
     * ilk urunun ustune git add to cart tikla
