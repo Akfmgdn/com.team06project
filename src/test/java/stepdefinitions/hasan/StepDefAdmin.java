@@ -15,7 +15,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class StepDefAdmin {
-
+/*
     pages.AdminDashboardPage AdminDashboardPage = new AdminDashboardPage();
     LoginPage loginPage = new LoginPage();
 
@@ -183,7 +183,7 @@ public class StepDefAdmin {
 
     }
 
-
+*/
 }
 
 

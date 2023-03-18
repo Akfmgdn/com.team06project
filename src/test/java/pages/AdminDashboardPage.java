@@ -357,6 +357,12 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//div[@class='main-title d-md-flex']")
     public List<WebElement> mainTitleListUnderGraphs;
 
+    @FindBy(xpath = "//i[@class='fa fa-bell']")
+    public WebElement adminNotificationsIcon;
+
+    @FindBy(xpath = "//div[@class='Notification_body']")
+    public WebElement adminNotificationBody;
+
 
 
 
