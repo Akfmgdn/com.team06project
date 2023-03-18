@@ -1,6 +1,6 @@
 
 
-package stepdefinitions.hasan.StepDefhasan;
+package stepdefinitions.hasan;
 
 
 import io.cucumber.java.en.And;
@@ -182,6 +182,8 @@ public class StepDefAdmin {
         Assert.assertTrue(AdminDashboardPage.productListQuickearch.isDisplayed());
 
     }
+
+
 }
 
 

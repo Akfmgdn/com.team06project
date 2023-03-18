@@ -18,22 +18,22 @@ Feature: Mywishlist page tests
       |criteria|
       |New,Low to high,High to low |
 
-  @brn3
+
   Scenario: 3. compare icon
     * click wishlink and hover over a product
     * click compare icon and verify that the product added to compare page
 
-  @brn3
+
   Scenario: 4. show icon
 
     * click wishlink and hover over a product
     * click show icon and verify that the show window of the relevant product open
 
-  @brn3
+
   Scenario: 5. delete icon
     * click delete icon and verify that the  relevant product is deleted
 
-  @brn3
+
   Scenario: 6. Add to Cart
 
     * hover over a product
