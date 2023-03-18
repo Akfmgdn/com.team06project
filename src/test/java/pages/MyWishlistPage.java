@@ -61,7 +61,7 @@ public class MyWishlistPage {
     @FindBy(xpath = "(//a[@class='removeWishlist'])[1]")
     public WebElement deleteIcon;
 
-    @FindBy(xpath = "(//i[@class='ti-close'])[7]")
+    @FindBy(xpath = "(//button[@class='close_modal_icon'])[3]")
     public WebElement showCloseIcon;
 
     @FindBy(xpath = "(//button[@type='submit'])[2]")
