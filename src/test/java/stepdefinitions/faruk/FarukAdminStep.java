@@ -1,17 +1,15 @@
 package stepdefinitions.faruk;
 
-import io.cucumber.java.bs.A;
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 import pages.AdminDashboardPage;
+import pages.AdminReportsPage;
 import pages.MyAccountPage;
 import pages.MyWalletPage;
 import utilities.Driver;
@@ -24,6 +22,7 @@ public class FarukAdminStep {
     MyWalletPage myWalletPage = new MyWalletPage();
     AdminDashboardPage adminDashboardPage = new AdminDashboardPage();
     MyAccountPage myAccountPage = new MyAccountPage();
+    AdminReportsPage adminReportsPage=new AdminReportsPage();
 
     @Given("Go to Admin site")
     public void goToAdminSite() {
@@ -59,6 +58,17 @@ public class FarukAdminStep {
             List<String> titleList = new ArrayList<>(Arrays.asList(arr));
             titleList.forEach(x -> Assert.assertTrue(mainTitles.contains(x)));
         }
+
+        if (element.equals("Keyword search report")){
+            Assert.assertTrue(adminReportsPage.keywordSearchReportTable.isDisplayed());
+        }
+
+        if (element.equals("Keyword")){
+            Assert.assertTrue(adminReportsPage.keywordsHeader.isDisplayed());
+        }
+        if (element.equals("Number of time")){
+            Assert.assertTrue(adminReportsPage.numberOfTimeHeader.isDisplayed());
+        }
     }
 
     @And("hit the details button in the {string} and verify that they redirect to relevant pages")
@@ -71,11 +81,9 @@ public class FarukAdminStep {
 
             String mainWindowHandle = Driver.getDriver().getWindowHandle();
             Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
-            Iterator<String> iterator = allWindowHandles.iterator();
 
             // Here we will check if child window has other child windows and will fetch the heading of the child window
-            while (iterator.hasNext()) {
-                String ChildWindow = iterator.next();
+            for (String ChildWindow : allWindowHandles) {
                 if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
                     Driver.getDriver().switchTo().window(ChildWindow);
                     Assert.assertTrue(adminDashboardPage.customerProfileHeader.isDisplayed());
@@ -97,9 +105,68 @@ public class FarukAdminStep {
                     Driver.getDriver().switchTo().window(ChildWindow);
                 }
             }
-            Assert.assertEquals("https://trendlifebuy.com/ordermanage/sales-details/350" ,
+            Assert.assertEquals("https://trendlifebuy.com/ordermanage/sales-details/356" ,
                     Driver.getDriver().getCurrentUrl());
         }
 
+    }
+
+    @And("Hit the Admin reports link")
+    public void hitTheAdminReportsLink() {
+        adminReportsPage.adminReportsLink.click();
+
+
+    }
+
+    @Then("Hit the keywords search link")
+    public void hitTheKeywordsSearchLink() {
+        adminReportsPage.keywordsSearchLink.click();
+
+    }
+
+    @And("type the mostly searched keyword in Quick Search Textbox and hit enter")
+    public void typeTheMostlySearchedKeywordInQuickSearchTextboxAndHitEnter() {
+        adminReportsPage.quickSearchBox.sendKeys(adminReportsPage.firstKeywordInTheKeywordSearchTable.getText()
+        ,Keys.ENTER);
+    }
+
+    @Then("Verify that all the relevant keywords are listed in the search report list")
+    public void verifyThatAllTheRelevantKeywordsAreListedInTheSearchReportList() {
+        List<String> keywordsSearchList = adminReportsPage.searchResultsTable.stream().map(WebElement::getText).
+                collect(Collectors.toList());
+        keywordsSearchList.forEach(each ->Assert.assertTrue(each.contains("No matching records found")));
+
+        keywordsSearchList.forEach(each -> Assert.assertTrue(
+                each.contains(adminReportsPage.firstKeywordInTheKeywordSearchTable.getText())));
+    }
+
+    @And("Click on the page {string} button at the very bottom of the table and verify that page is changed")
+    public void clickOnThePageButtonAtTheVeryBottomOfTheTableAndVerifyThatPageIsChanged(String number) {
+        String firstKeywordText=adminReportsPage.firstKeywordInTheKeywordSearchTable.getText();
+        if (number.equals("2")){
+            adminReportsPage.page2Button.click();
+            ReusableMethods.bekle(4);
+            String firstKeywordOnthePageTwo=adminReportsPage.firstKeywordOnTheSecondPage.getText();
+            Assert.assertNotEquals(firstKeywordOnthePageTwo, firstKeywordText);
+        }
+
+
+    }
+
+    @And("Verify that there is a maximum of ten keyword information on each page")
+    public void verifyThatThereIsAMaximumOfTenKeywordInformationOnEachPage() {
+        Assert.assertTrue(adminReportsPage.keywordList.size()<=10);// The first page is checked here on this line
+        for (int i = 2; i <=5 ; i++) {//In this code block,the pages from 2 to 5 are checked
+           WebElement pageNum= adminReportsPage.pageLocators(i);
+           pageNum.click();
+           ReusableMethods.bekle(3);
+           Assert.assertTrue(adminReportsPage.keywordList.size()<=10);
+        }
+
+    }
+
+    @After
+    public void tearDown()  {
+        Driver.quitDriver();
     }
 }
