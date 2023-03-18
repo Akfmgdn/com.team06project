@@ -1,4 +1,3 @@
-
 Feature: login testi
 
   Scenario: logine giris

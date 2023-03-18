@@ -1,19 +1,17 @@
-
+@hasan
 Feature: US_035 Bir yönetici olarak sitedeki ürünler listelerine erisebilmek
 
   Scenario: login testi deneme
 
-    Given go to the login page
-    Then Loginle email ve password yazilir
-    And dashboard link is clicked
-    And my order link is clicked
-    And my order details button is clicked
-    And It is verified that order id and shipped are displayed
+    Given ilk login girisi
+    Then  emailbox yazar
+    And passwordBox yazar
+    And login butonuna click yapar
+
 
   Scenario: TC001 Products menusunden Product List sayfasina erisimi dogrulanir
-    Given qa.trendlifebuy.com/Admin/login anasayafaya gider
+
     Then Products menusune clikc yapar
-    And  Product List sayfasina erisir
 
     Scenario: TC002 Product sayfasindan Product Listesindeki linkleri görünür
       Given  Product List, Alert List
@@ -21,6 +19,23 @@ Feature: US_035 Bir yönetici olarak sitedeki ürünler listelerine erisebilmek
       And productDisabledList click yapar
       And productBySkuList click yapar
       And gittigi sayfalar dogrulanir
+
+
+      Scenario: TC003 SL, Name, Product Type, Brand, Image, Stock, Status, listelendigini dogrular
+
+        Given SL linkine click yapar
+        Then Name linkine click yapar
+        And  Product linkine Type click yapar
+        And  Brand linkine click yapar
+        And Image linkine click yapar
+        And Stock linkine click yapar
+        And status linkine click yapar
+        And linklerin listelendigini dogrulanir
+        And sayfayi kapatir
+
+
+
+
 
 
 
