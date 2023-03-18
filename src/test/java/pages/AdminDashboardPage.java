@@ -357,6 +357,7 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//div[@class='main-title d-md-flex']")
     public List<WebElement> mainTitleListUnderGraphs;
 
+
     @FindBy(xpath = "(//div[@id='DataTables_Table_1_wrapper']/table/tbody/tr)[1]/td[1]")
     public WebElement plusButtonInsideNewCustomerTable;
 
@@ -378,6 +379,12 @@ public class AdminDashboardPage {
 
 
     //=========================================================================\\
+
+    @FindBy(xpath = "//i[@class='fa fa-bell']")
+    public WebElement adminNotificationsIcon;
+
+    @FindBy(xpath = "//div[@class='Notification_body']")
+    public WebElement adminNotificationBody;
 
 
 

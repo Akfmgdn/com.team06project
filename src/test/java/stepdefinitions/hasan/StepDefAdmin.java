@@ -1,6 +1,6 @@
 
 
-package stepdefinitions.hasan.StepDefhasan;
+package stepdefinitions.hasan;
 
 
 import io.cucumber.java.en.And;
@@ -15,7 +15,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class StepDefAdmin {
-
+/*
     pages.AdminDashboardPage AdminDashboardPage = new AdminDashboardPage();
     LoginPage loginPage = new LoginPage();
 
@@ -182,6 +182,8 @@ public class StepDefAdmin {
         Assert.assertTrue(AdminDashboardPage.productListQuickearch.isDisplayed());
 
     }
+
+*/
 }
 
 

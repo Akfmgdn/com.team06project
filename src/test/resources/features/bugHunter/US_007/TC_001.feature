@@ -24,17 +24,17 @@ Feature: US_007 As a user, I want to be able to register on the site in order to
 
   Scenario:TC_03 It must be verified that the Last Name Text Box is registered with a name of at least 2 letters.
 
- And trendlifebuy goes to homepage
- And pop up closes
- And Register clicks
- And Enters valid First Name
- And Enters valid Last Name
- And writes valid e-mail address
- And writes valid Password
- And Writes valid Confirm password
- And By signing up, you agree to Terms of Service and Privacy Policy checks that it is checked
- And sign up button clicks
- And It is tested that the Last Name Text Box is registered with a name of at least 2 letters.
+  And trendlifebuy goes to homepage
+  And pop up closes
+  And Register clicks
+  And Enters valid First Name
+  And Enters valid Last Name
+  And writes valid e-mail address
+  And writes valid Password
+  And Writes valid Confirm password
+  And By signing up, you agree to Terms of Service and Privacy Policy checks that it is checked
+  And sign up button clicks
+  And It is tested that the Last Name Text Box is registered with a name of at least 2 letters.
 
   Scenario:TC_04 It should be verified that it is possible to register with the e-mail address entered in accordance with the criterias.
 
