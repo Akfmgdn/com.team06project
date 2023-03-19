@@ -357,11 +357,35 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//div[@class='main-title d-md-flex']")
     public List<WebElement> mainTitleListUnderGraphs;
 
+
+    @FindBy(xpath = "(//div[@id='DataTables_Table_1_wrapper']/table/tbody/tr)[1]/td[1]")
+    public WebElement plusButtonInsideNewCustomerTable;
+
+    @FindBy(xpath = "(//span[@class='dtr-data'])[2]")
+    public WebElement detailsButtonUnderThePlusButton;
+
+    @FindBy(xpath = "(//tbody)[5]/tr[1]/td[1]")
+    public WebElement plusButtonInsideTheLatestOrder;
+
+    @FindBy(xpath = "(//span[@class='dtr-data'])[2]")
+
+    public WebElement detailsButtonUnderTheLatestOrder;
+
+    //https://trendlifebuy.com/customer/profile/details/1051
+    //In the redirected page after clicked on the detail button.
+    @FindBy(xpath = "//h3[text()='Customer Profile']")
+    public WebElement customerProfileHeader;
+
+
+
+    //=========================================================================\\
+
     @FindBy(xpath = "//i[@class='fa fa-bell']")
     public WebElement adminNotificationsIcon;
 
     @FindBy(xpath = "//div[@class='Notification_body']")
     public WebElement adminNotificationBody;
+
 
 
 
