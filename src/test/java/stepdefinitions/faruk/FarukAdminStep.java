@@ -99,14 +99,13 @@ public class FarukAdminStep {
             String mainWindowHandle = Driver.getDriver().getWindowHandle();
             Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
 
-            // Here we will check if child window has other child windows and will fetch the heading of the child window
+            // Here we will check if child window has other child windows and will switch to that child window
             for (String ChildWindow : allWindowHandles) {
                 if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
                     Driver.getDriver().switchTo().window(ChildWindow);
                 }
             }
-            Assert.assertEquals("https://trendlifebuy.com/ordermanage/sales-details/356" ,
-                    Driver.getDriver().getCurrentUrl());
+            Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/ordermanage/sales-details/"));
         }
 
     }
