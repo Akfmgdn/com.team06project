@@ -189,6 +189,7 @@ public class StepDefAdmin {
     }
 
 
+
     @And("select dropdown click yapar")
     public void selectDropdownClickYapar() {
         AdminDashboardPage.productListDropdownSelectedAction.click();
@@ -233,6 +234,8 @@ public class StepDefAdmin {
 
 
     }
+
+
 }
 
 
