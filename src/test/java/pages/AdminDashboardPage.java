@@ -321,6 +321,35 @@ public class AdminDashboardPage {
     @FindBy(xpath = "(//input[@placeholder='Quick Search'])[1]")
     public WebElement productListQuickearch;
 
+    @FindBy(xpath = "(//td[@tabindex='0'])[1]")
+    public WebElement productListTabindex1;
+
+    @FindBy(xpath = "(//button[@id='dropdownMenu2'])[2]")
+    public WebElement productListDropdownSelectedAction;
+
+    @FindBy(xpath = "(//*[text()='View'])[2]")
+    public WebElement productListSelectedActionView;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item edit_brand'])[3]")
+    public WebElement ProductListDropdownSelectedActionEdit;
+
+    @FindBy(xpath = "//*[text()='Type ']")
+    public WebElement productInformationType;
+
+    @FindBy(xpath = "(//div[@class='note-editable card-block'])[2]")
+    public WebElement productDescription1;
+
+    @FindBy(xpath = "//*[text()='Meta Description']")
+    public WebElement productDescription2;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -385,6 +414,8 @@ public class AdminDashboardPage {
 
     @FindBy(xpath = "//div[@class='Notification_body']")
     public WebElement adminNotificationBody;
+
+
 
 
 

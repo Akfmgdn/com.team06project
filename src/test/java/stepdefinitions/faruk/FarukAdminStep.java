@@ -7,7 +7,12 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.interactions.Actions;
+
+
 import org.testng.asserts.SoftAssert;
+
 import pages.AdminDashboardPage;
 import pages.AdminReportsPage;
 import pages.MyAccountPage;
@@ -23,6 +28,8 @@ public class FarukAdminStep {
     AdminDashboardPage adminDashboardPage = new AdminDashboardPage();
     MyAccountPage myAccountPage = new MyAccountPage();
     AdminReportsPage adminReportsPage=new AdminReportsPage();
+
+
 
     @Given("Go to Admin site")
     public void goToAdminSite() {
