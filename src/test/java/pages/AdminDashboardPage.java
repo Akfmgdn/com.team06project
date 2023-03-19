@@ -321,6 +321,35 @@ public class AdminDashboardPage {
     @FindBy(xpath = "(//input[@placeholder='Quick Search'])[1]")
     public WebElement productListQuickearch;
 
+    @FindBy(xpath = "(//td[@tabindex='0'])[1]")
+    public WebElement productListTabindex1;
+
+    @FindBy(xpath = "(//button[@id='dropdownMenu2'])[2]")
+    public WebElement productListDropdownSelectedAction;
+
+    @FindBy(xpath = "(//*[text()='View'])[2]")
+    public WebElement productListSelectedActionView;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item edit_brand'])[3]")
+    public WebElement ProductListDropdownSelectedActionEdit;
+
+    @FindBy(xpath = "//*[text()='Type ']")
+    public WebElement productInformationType;
+
+    @FindBy(xpath = "(//div[@class='note-editable card-block'])[2]")
+    public WebElement productDescription1;
+
+    @FindBy(xpath = "//*[text()='Meta Description']")
+    public WebElement productDescription2;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -386,6 +415,47 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//div[@class='Notification_body']")
     public WebElement adminNotificationBody;
 
+    @FindBy(xpath = "//div[@class='Notification_body']")
+    public WebElement adminNotificationSettingbutton;
+
+    @FindBy(xpath = "//h3[@class='mb-0 mr-30 mb_xs_15px mb_sm_20px']")
+    public WebElement adminPersonaNotificationSettingText;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[2]/label[1]/span[1]")
+    public WebElement adminPersonaNotificationSettingType;
+
+    @FindBy(xpath = "//div[@class='toast-title']")
+    public WebElement adminPersonaNotificationSettingTypeActifed;
+
+    @FindBy(xpath = "//input[@id='search']")
+    public WebElement adminDashboardSearchBox;
+
+    @FindBy(xpath = "//h3[@class='mb-0 mr-3 text-nowrap']")
+    public WebElement adminDashboardSummaryText;
+
+    @FindBy(xpath = "//div[contains(@class,'collaspe_icon')]//i[@class='ti-menu']")
+    public WebElement adminDashboardMenuIcon;
+
+    @FindBy(xpath = "//div[@class='nav_title']//span[contains(text(),'Dashboard')]")
+    public WebElement adminDashboardLink;
+
+    @FindBy(xpath = "//a[@class='primary-btn white mr-10 tab_hide']")
+    public WebElement adminDashboardWebSiteLink;
+
+    @FindBy(xpath = "//h1[@class='gradient-color2 total_visitors']")
+    public WebElement adminDashboarvisitorText;
+
+    @FindBy(xpath = "//a[@class='nav-link filtering active']")
+    public WebElement adminDashboardTodaybutton;
+
+    @FindBy(xpath = "//a[normalize-space()='This Week']")
+    public WebElement adminDashboardThisWeekbutton;
+
+    @FindBy(xpath = "//a[normalize-space()='This Month']")
+    public WebElement adminDashboardThisMonthbutton;
+
+    @FindBy(xpath = "//a[normalize-space()='This Year']")
+    public WebElement adminDashboardThisYearbutton;
 
 
 

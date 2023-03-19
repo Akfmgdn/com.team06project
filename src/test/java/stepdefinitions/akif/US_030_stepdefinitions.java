@@ -1,5 +1,6 @@
 package stepdefinitions.akif;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -42,4 +43,44 @@ public class US_030_stepdefinitions {
     }
 
 
+    @And("Clicks the Notifications Setting button")
+    public void clicksTheNotificationsSettingButton() {
+        adminDashboardPage.adminNotificationSettingbutton.click();
+
+    }
+
+    @And("When the Notifications icon is clicked, it is tested that it redirects to the user-notification page when the Setting button is clicked in the window that opens.")
+    public void whenTheNotificationsIconIsClickedItIsTestedThatItRedirectsToTheUserNotificationPageWhenTheSettingButtonIsClickedInTheWindowThatOpens() {
+        Assert.assertTrue(adminDashboardPage.adminPersonaNotificationSettingText.isDisplayed());
+
+    }
+
+    @And("It is tested that the information message type active passive can be changed in the Personal Notification Setting List on the User-Notification page.")
+    public void itIsTestedThatTheInformationMessageTypeActivePassiveCanBeChangedInThePersonalNotificationSettingListOnTheUserNotificationPage() {
+        adminDashboardPage.adminPersonaNotificationSettingType.click();
+        Assert.assertTrue(adminDashboardPage.adminPersonaNotificationSettingTypeActifed.isDisplayed());
+
+    }
+
+    @And("Clicks the Read All button")
+    public void clicksTheReadAllButton() {
+        //Burada bug var Read All butonu görünmüyor manuel olarak test ederken bir kere gördüğüme eminim
+        Assert.assertTrue(false);
+    }
+
+    @And("It is tested that the information messages \\(as read) are deleted from the window when the Read All button is clicked on the menu that opens when the Notifications icon is clicked.")
+    public void itIsTestedThatTheInformationMessagesAsReadAreDeletedFromTheWindowWhenTheReadAllButtonIsClickedOnTheMenuThatOpensWhenTheNotificationsIconIsClicked() {
+        //TC_04 Bug devam sitep
+    }
+
+    @And("Clicks the view button")
+    public void clicksTheViewButton() {
+        //Burada bug var view butonu görünmüyor manuel olarak test ederken bir kere gördüğüme eminim
+        Assert.assertTrue(false);
+    }
+
+    @And("When the Notifications icon is clicked, it is tested that it redirects to the relevant page when the View button is clicked in the menu that opens.")
+    public void whenTheNotificationsIconIsClickedItIsTestedThatItRedirectsToTheRelevantPageWhenTheViewButtonIsClickedInTheMenuThatOpens() {
+        //TC_05 Bug devam sitep
+    }
 }

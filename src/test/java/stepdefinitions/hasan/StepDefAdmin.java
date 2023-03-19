@@ -15,7 +15,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class StepDefAdmin {
-/*
+
     pages.AdminDashboardPage AdminDashboardPage = new AdminDashboardPage();
     LoginPage loginPage = new LoginPage();
 
@@ -182,8 +182,60 @@ public class StepDefAdmin {
         Assert.assertTrue(AdminDashboardPage.productListQuickearch.isDisplayed());
 
     }
+    @And("tabindex click yapar")
+    public void tabindexClickYapar() {
+        AdminDashboardPage.productListTabindex1.click();
 
-*/
+    }
+
+
+
+    @And("select dropdown click yapar")
+    public void selectDropdownClickYapar() {
+        AdminDashboardPage.productListDropdownSelectedAction.click();
+    }
+
+    @And("View click yapar")
+    public void viewClickYapar() {
+        AdminDashboardPage.productListSelectedActionView.click();
+    }
+
+    @And("urunun gorunurlugu dogrular")
+    public void urununGorunurluguDogrular() {
+       Assert.assertTrue(AdminDashboardPage.productListSelectedActionView.isDisplayed());
+
+    }
+
+
+    @And("edit button click yapar")
+    public void editButtonClickYapar() {
+        AdminDashboardPage.ProductListDropdownSelectedActionEdit.click();
+
+    }
+
+    @And("edit sayfasindaki bilgilerini dogrular")
+    public void editSayfasindakiBilgileriniDogrular() {
+        Assert.assertTrue(AdminDashboardPage.ProductListDropdownSelectedActionEdit.isDisplayed());
+
+    }
+
+    @And("type dogrular")
+    public void typeDogrular() {
+        AdminDashboardPage.productInformationType.isDisplayed();
+
+
+    }
+
+    @Then("mesaji gorunur")
+    public void mesajiGorunur() {
+        action.sendKeys(Keys.END).perform();
+        AdminDashboardPage.productDescription1.isDisplayed();
+        AdminDashboardPage.productDescription2.isDisplayed();
+
+
+    }
+
+
 }
 
 

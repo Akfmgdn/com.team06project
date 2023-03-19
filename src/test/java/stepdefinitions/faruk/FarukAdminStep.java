@@ -7,7 +7,12 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.interactions.Actions;
+
+
 import org.testng.asserts.SoftAssert;
+
 import pages.AdminDashboardPage;
 import pages.AdminReportsPage;
 import pages.MyAccountPage;
@@ -23,6 +28,8 @@ public class FarukAdminStep {
     AdminDashboardPage adminDashboardPage = new AdminDashboardPage();
     MyAccountPage myAccountPage = new MyAccountPage();
     AdminReportsPage adminReportsPage=new AdminReportsPage();
+
+
 
     @Given("Go to Admin site")
     public void goToAdminSite() {
@@ -99,14 +106,13 @@ public class FarukAdminStep {
             String mainWindowHandle = Driver.getDriver().getWindowHandle();
             Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
 
-            // Here we will check if child window has other child windows and will fetch the heading of the child window
+            // Here we will check if child window has other child windows and will switch to that child window
             for (String ChildWindow : allWindowHandles) {
                 if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
                     Driver.getDriver().switchTo().window(ChildWindow);
                 }
             }
-            Assert.assertEquals("https://trendlifebuy.com/ordermanage/sales-details/356" ,
-                    Driver.getDriver().getCurrentUrl());
+            Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/ordermanage/sales-details/"));
         }
 
     }

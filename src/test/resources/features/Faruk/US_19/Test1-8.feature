@@ -1,3 +1,4 @@
+@far
 Feature:Dashboard test
 
   Background:

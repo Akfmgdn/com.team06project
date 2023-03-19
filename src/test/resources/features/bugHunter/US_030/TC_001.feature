@@ -1,5 +1,5 @@
 Feature:US_030 As an administrator, I would like to have the notifications section on the main page in order to be informed about the activities on the site.
-@bugHunter
+
   Scenario:TC_001 It should be verified that the Notifications text is visible in the window that opens when the Notifications icon is clicked.
 
    And admin goes to homepage
@@ -27,7 +27,7 @@ Feature:US_030 As an administrator, I would like to have the notifications secti
    And  clicks the sign in button
    And  Clicks on the Notifications icon
    And  Clicks the Notifications Setting button
-   And  It is tested that the information message type (active/passive) can be changed in the Personal Notification Setting List on the User-Notification page.
+   And  It is tested that the information message type active passive can be changed in the Personal Notification Setting List on the User-Notification page.
 
   Scenario:TC_004 It should be verified that the information messages (as read) are deleted from the window when the Read All button is clicked on the menu that opens when the Notifications icon is clicked.
 
