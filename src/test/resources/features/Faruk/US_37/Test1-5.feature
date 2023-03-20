@@ -1,1 +1,1 @@
-Feature admin page
+Feature: admin page
