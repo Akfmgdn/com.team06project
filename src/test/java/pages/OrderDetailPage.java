@@ -14,6 +14,11 @@ public class OrderDetailPage {
     @FindBy(xpath = "//h4[text()='Order ID:  ']")
     public WebElement orderIdLabel;
 
+
+    //https://qa.trendlifebuy.com/my-purchase-order-details>Order Id number
+    @FindBy(xpath = "(//p[@class='font_14 f_w_400 m-0 lh-base'])[1]")
+    public WebElement orderIdNumber;
+
     //https://qa.trendlifebuy.com/my-purchase-order-details>Package Title
     @FindBy(xpath = "(//h4[@class='font_16 f_w_700 m-0'])[1]")
     public WebElement packageLabel;

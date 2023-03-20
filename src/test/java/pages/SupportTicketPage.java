@@ -9,8 +9,7 @@ import java.util.List;
 
 public class SupportTicketPage {
 
-    public SupportTicketPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public SupportTicketPage(){PageFactory.initElements(Driver.getDriver(),this);
     }
 
 
