@@ -3,7 +3,9 @@ package stepdefinitions.barboros;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pages.LoginPage;
 import pages.SupportTicketPage;
 import utilities.ConfigReader;
@@ -204,7 +206,16 @@ public class SuppotTicketsStepdefinitions {
             ReusableMethods.bekle(1);
             ReusableMethods.jsClick(ticket.showLink);
         }
-        Assert.assertTrue(ticket.loadedFile.getText().contains("screen"));
+        List<WebElement> loadedFiles= ticket.loadedFile;
+        int num=0;
+        for (WebElement each: loadedFiles) {
+            if (each.getText().contains("screen")){
+                num++;
+            }
+
+        }
+        Assert.assertTrue(num>=1);
+
     }
 
     @Given("verify that delete action is worked")
@@ -228,7 +239,7 @@ public class SuppotTicketsStepdefinitions {
             ReusableMethods.jsClick(ticket.selectDropdown);
             ReusableMethods.bekle(1);
             ReusableMethods.jsClick(ticket.deleteLink);
-            ReusableMethods.jsClick(ticket.deleteLink);
+
         }
 
         ReusableMethods.bekle(3);

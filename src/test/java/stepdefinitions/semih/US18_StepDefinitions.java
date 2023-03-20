@@ -73,7 +73,10 @@ public class US18_StepDefinitions {
 
     @Given("It is verified that order id is equal to actual order id")
     public void it_is_verified_that_order_id_is_equal_to_actual_order_id() {
-        Assert.assertTrue(orderDetailPage.orderIdLabel.getText().contains(orderId));
+        ReusableMethods.waitForVisibility(orderDetailPage.orderIdLabel,15);
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(orderDetailPage.orderIdNumber.getText().contains(orderId));
+
     }
 
     @Given("It is verified that Status is equal to actual status")
@@ -115,6 +118,7 @@ public class US18_StepDefinitions {
     @Given("It is verified that Payment info is Displayed")
     public void it_is_verified_that_payment_info_is_displayed() {
         Assert.assertTrue(orderDetailPage.paymentInfoLabel.isDisplayed());
+        ReusableMethods.bekle(1);
     }
     //////////////////////////////// TC-3 //////////////////////////////////////
 
@@ -182,17 +186,23 @@ public class US18_StepDefinitions {
     //////////////////////////////// TC-5 //////////////////////////////////////
     @Given("Cancel Order Button is displayed")
     public void cancel_order_button_is_displayed() {
-        Driver.getDriver().navigate().back();
+        //Driver.getDriver().navigate().back();
         Assert.assertTrue(myOrdersPage.cancelOrderButton.isDisplayed());
     }
 
     @Given("Cancel Order button is clicked")
     public void cancel_order_button_is_clicked() {
-        myOrdersPage.cancelOrderButton.click();
+        ReusableMethods.scrollDownByPixel(300);
+        ReusableMethods.bekle(1);
+        ReusableMethods.waitForVisibility(myOrdersPage.cancelOrderButton,5);
+        ReusableMethods.jsClick(myOrdersPage.cancelOrderButton);
     }
 
     @Given("Cancel Window title is displayed on the opening window")
     public void cancel_window_title_is_displayed_on_the_opening_window() {
+        ReusableMethods.waitForVisibility(myOrdersPage.cancelReasonWindowLabel,10);
+        Assert.assertTrue(myOrdersPage.cancelReasonWindowLabel.isDisplayed());
+        ReusableMethods.bekle(1);
     }
 
     //////////////////////////////// TC-6 //////////////////////////////////////
@@ -210,6 +220,7 @@ public class US18_StepDefinitions {
 
     @Given("Order Cancelled is displayed")
     public void order_cancelled_is_displayed() {
+        ReusableMethods.waitForVisibility(myOrdersPage.statusInformation,10);
         Assert.assertTrue(myOrdersPage.statusInformation.getText().contains("Cancelled"));
     }
 

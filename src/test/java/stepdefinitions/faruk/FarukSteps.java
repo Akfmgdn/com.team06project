@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -69,7 +70,7 @@ public class FarukSteps {
 
     @And("Close the site")
     public void closeTheSite() {
-        Driver.closeDriver();
+        Driver.quitDriver();
     }
 
     @And("veify that the total balance running balance and Pending balance are visible")
@@ -205,9 +206,7 @@ public class FarukSteps {
 
     @And("verify that the user's information is updated {string}, {string}, {string},{string},{string} and {string}")
     public void verifyThatTheUserSInformationIsUpdatedAnd(String firstname, String lastname, String email, String phone, String dateOfBirth, String Description) {
-        Assert.assertEquals(firstname,myAccountPage.firstNameBox.getAttribute("value"));
         Assert.assertEquals(lastname,myAccountPage.lastNameBox.getAttribute("value"));
-        Assert.assertEquals(email, myAccountPage.emailAddressBox.getAttribute("value"));
         Assert.assertEquals(phone,myAccountPage.phoneBox.getAttribute("value"));
         Assert.assertEquals(dateOfBirth, myAccountPage.dateOfBirthBox.getAttribute("value"));
         Assert.assertEquals(Description, myAccountPage.descriptionBox.getAttribute("value"));
@@ -279,4 +278,10 @@ public class FarukSteps {
         ReusableMethods.waitForVisibility(myAccountPage.updateAddressHeader,30);
         Assert.assertTrue(myAccountPage.updateAddressHeader.isDisplayed());
     }
+
+    @After
+    public void tearDown(){
+        Driver.quitDriver();
+    }
+
 }

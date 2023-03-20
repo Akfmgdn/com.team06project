@@ -11,6 +11,7 @@ import pages.MyCouponsPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class US20_StepDefinitions {
@@ -32,14 +33,20 @@ public class US20_StepDefinitions {
     }
 
     ///////////////////////// TC-02 ////////////////////////////////
-    @Then("A {string} code sended to the add coupon textbox and Add Coupon button is clicked")
-    public void a_code_sended_to_the_add_coupon_textbox_and_Add_Coupon_button_is_clicked(String coupon) {
-        myCouponsPage.addCouponTextbox.sendKeys(coupon);
-        myCouponsPage.addCouponButton.click();
-        ReusableMethods.bekle(1);
-        myCouponsPage.addCouponTextbox.clear();
-        ReusableMethods.bekle(1);
+    @Then("{string}, {string}, {string}  are sended coupon textbox and Add Coupon button is clicked")
+    public void are_sended_coupon_textbox_and_add_coupon_button_is_clicked(String string0, String string2, String string3) {
+        List<String> list = new ArrayList<>();
+        list.add(string0);
+        list.add(string2);
+        list.add(string3);
 
+        for (int i = 0; i < list.size(); i++) {
+            myCouponsPage.addCouponTextbox.sendKeys(list.get(i));
+            myCouponsPage.addCouponButton.click();
+            ReusableMethods.bekle(1);
+            myCouponsPage.addCouponTextbox.clear();
+            ReusableMethods.bekle(1);
+        }
     }
     @Then("verify coupon code is added to the Collected Coupons")
     public void verify_coupon_code_is_added_to_the_collected_coupons() {
@@ -55,6 +62,7 @@ public class US20_StepDefinitions {
     ///////////////////////// TC-03 ////////////////////////////////
     @Then("verify Coupon Value information is displayed")
     public void verify_coupon_value_information_is_displayed() {
+        ReusableMethods.scrollDownByPixel(300);
         Assert.assertTrue(myCouponsPage.firstCollectedCouponValue.isDisplayed());
         Assert.assertTrue(myCouponsPage.secondCollectedCouponValue.isDisplayed());
         Assert.assertTrue(myCouponsPage.thirdCollectedCouponValue.isDisplayed());
