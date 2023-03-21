@@ -14,8 +14,9 @@ import org.junit.runner.RunWith;
         //plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features="src/test/resources/features",
         glue= "stepdefinitions",
-        tags="@vip",
+        tags="@hasan",
         dryRun= false
+
 
 )
 

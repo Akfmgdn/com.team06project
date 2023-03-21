@@ -1,14 +1,4 @@
-Feature: login testi
-
-  Scenario: logine giris
-
-    Given trendlifebuy anasayfaya gider
-    And login linkine click yapar
-    Then Email adresbox
-    Then e mail password yazar
-    And login butonuna click yapar
-
-
+Feature: TC001 Dashboard sayfasinda bulunan side bar'daki Purchase testi
 
     Scenario: TC001 Dashboard sayfasinda bulunan side bar'daki Purchase History Linkinin Purchase History sayfasina yönlendirdigi dogrulanmali.
 

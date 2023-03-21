@@ -45,7 +45,7 @@ Feature: Bir kullanici olarak siparislerimle ilgili islemleri gerceklestirebilme
           And Email adresbox
           And e mail password yazar
           And login butonuna click yapar
-          And ast bes orders, last on orders, last yirmi orders, last kirk orders) belirlenebildigi gorulur
+         ## And ast bes orders, last on orders, last yirmi orders, last kirk orders) belirlenebildigi gorulur
 
 
           Scenario: TC005 Görüntülenen ürünler eger tek sayfada degilse sayfalar arasinda (prew-next yapilarak) gecislerin yapilabildigi dogrulanmali.

@@ -1,5 +1,5 @@
-Feature:US_030 As an administrator, I would like to have the notifications section on the main page in order to be informed about the activities on the site.
 
+Feature:US_030 As an administrator, I would like to have the notifications section on the main page in order to be informed about the activities on the site.
   Scenario:TC_001 It should be verified that the Notifications text is visible in the window that opens when the Notifications icon is clicked.
 
    And admin goes to homepage

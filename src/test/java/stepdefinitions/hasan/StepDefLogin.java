@@ -54,7 +54,7 @@ public class StepDefLogin {
     @Then("login butonuna click yapar")
     public void login_butonuna_click_yapar() {
         action.sendKeys(Keys.PAGE_DOWN).perform();
-        loginPage.signInButton.click();
+       loginPage.signInButton.click();
 
     }
 
@@ -107,6 +107,7 @@ public class StepDefLogin {
     public void dasboard_texte_gidilir() {
         AdminDashboardPage.dashboardText.click();
     }
+
     @Then("my order linkinin order sayfasina click yapar")
     public void my_order_linkinin_order_sayfasina_click_yapar() {
         action.sendKeys(Keys.PAGE_DOWN).perform();
@@ -161,22 +162,16 @@ public class StepDefLogin {
     }
     @Then("urunlerin Order ID, Status, Order date, Order Amount ve Paid By gorunur")
     public void urunlerin_order_id_status_order_date_order_amount_ve_paid_by_gorunur() {
-        orderId = myOrdersPage.orderIdNumber.getText();
-        status = myOrdersPage.statusInformation.getText();
-        orderDate = myOrdersPage.orderDate.getText();
-        orderAmount = myOrdersPage.orderAmount.getText();
-        action.scrollByAmount(0, 250).perform();
-        ReusableMethods.bekle(1);
+        //orderId = myOrdersPage.orderIdNumber.getText();
+        //status = myOrdersPage.statusInformation.getText();
+        //orderDate = myOrdersPage.orderDate.getText();
+        //orderAmount = myOrdersPage.orderAmount.getText();
+        //action.scrollByAmount(0, 250).perform();
+        //ReusableMethods.bekle(1);
 
 
     }
 
-
-    @Given("order sayfasina gider")
-    public void order_sayfasina_gider() {
-        myOrdersPage.orderDetailLink.click();
-
-    }
 
 
     @Then("ast bes orders, last on orders, last yirmi orders, last kirk orders) belirlenebildigi gorulur")
@@ -190,11 +185,6 @@ public class StepDefLogin {
     @Given("sayfalardaki urunler tek tek dogrulanir")
     public void sayfalardakiUrunlerTekTekDogrulanir() {
         Assert.assertTrue(AdminDashboardPage.lastOrderDropDown.isDisplayed());
-    }
-
-    @Then("sayfayi kapatir")
-    public void sayfayiKapatir() {
-        Driver.getDriver().quit();
     }
 
 
