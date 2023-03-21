@@ -173,4 +173,15 @@ public class ReusableMethods {
         js.executeScript("window.scrollBy(0,"+pixel+")", "");
     }
 
+    // Salih-elemana kadar scroll  :D
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    // Salih- Scroll into view with JS. (USEFULL)
+    public static void scrollIntoViewJS(WebElement element) {
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        jsexecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
 }

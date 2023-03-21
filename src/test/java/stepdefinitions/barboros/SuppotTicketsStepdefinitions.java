@@ -18,6 +18,7 @@ public class SuppotTicketsStepdefinitions {
 
     LoginPage login = new LoginPage();
     SupportTicketPage ticket = new SupportTicketPage();
+    String dosyaYolu= System.getProperty("user.home")+ "/PROJE/images/screenpict.jpeg";
 
 
     @Given("Login as an admin and go to support ticket page")
@@ -56,7 +57,7 @@ public class SuppotTicketsStepdefinitions {
         ReusableMethods.bekle(1);
         String message="brnbrnx";
         ticket.noteTextBox.sendKeys(message);
-        ticket.attachFileUploader.sendKeys(ConfigReader.getProperty("dosyayolu"));
+        ticket.attachFileUploader.sendKeys(dosyaYolu);
         String text = ticket.statusCurrent.getText();
         ReusableMethods.jsClick(ticket.selectMenu);
         ReusableMethods.jsClick(ticket.option3Select);
@@ -190,7 +191,7 @@ public class SuppotTicketsStepdefinitions {
             Assert.assertTrue(true);
         }
         ReusableMethods.bekle(1);
-        ticket.updateTicketUploadFileBrowser.sendKeys(ConfigReader.getProperty("dosyayolu"));
+        ticket.updateTicketUploadFileBrowser.sendKeys(dosyaYolu);
         ReusableMethods.jsClick(ticket.updateTicketButton);
         ReusableMethods.waitForPageToLoad(3);
 

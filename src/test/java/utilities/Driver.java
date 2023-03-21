@@ -23,7 +23,7 @@ public class Driver {
     private Driver(){
 
     }
-    static WebDriver driver;
+    public static WebDriver driver;
     public static WebDriver getDriver() {
         if (driver == null) {
             switch (ConfigReader.getProperty("browser")) {
@@ -58,6 +58,13 @@ public class Driver {
     public static void closeDriver() {
         if (driver != null) { // driver'a deger atanmissa
             driver.close();
+            driver = null;
+        }
+    }
+
+    public static void quitDriver() {
+        if (driver != null) { // driver'a deger atanmissa
+            driver.quit();
             driver = null;
         }
     }
