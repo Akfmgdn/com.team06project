@@ -2,7 +2,7 @@ Feature: US_31 As an administrator, in order to access my profile information an
 
   Background:
     Given Login as an admin
-@wip1
+
   Scenario: TC_3101 Can see profile icon
 
     And Is visible profile icon
@@ -53,3 +53,6 @@ Feature: US_31 As an administrator, in order to access my profile information an
     And Click the profile icon
     Then Click the my profile page
     And Click the address button
+    And Clicks the Add new address button and adds new address information by entering the required fields on the page that opens
+    Then presses the save button and sees that the address it just added has been added.
+    And quit the browser

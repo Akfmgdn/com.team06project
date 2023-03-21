@@ -5,6 +5,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import pages.AdminDashboardPage;
 import pages.LoginPage;
 import utilities.ConfigReader;
@@ -14,6 +19,10 @@ import utilities.ReusableMethods;
 public class US_31 {
     LoginPage loginPage = new LoginPage();
     AdminDashboardPage adminDashboardPage = new AdminDashboardPage();
+
+    Actions actions = new Actions(Driver.getDriver());
+
+    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @Given("Login as an admin")
     public void loginasanadmin(){
@@ -92,5 +101,29 @@ public class US_31 {
         ReusableMethods.bekle(2);
         Assert.assertTrue(adminDashboardPage.addressInformationText.isDisplayed());
 
+    }
+
+    @And("Clicks the Add new address button and adds new address information by entering the required fields on the page that opens")
+    public void clicksTheAddNewAddressButtonAndAddsNewAddressInformationByEnteringTheRequiredFieldsOnThePageThatOpens() {
+        adminDashboardPage.addNewAdressButton.click();
+        adminDashboardPage.nameTextBox.sendKeys("abc");
+        adminDashboardPage.emailAdressTextBox.sendKeys("adsff@gmail.com");
+        adminDashboardPage.phoneNumberTextBox.sendKeys("111111111");
+        adminDashboardPage.adressTextBox.sendKeys("sfsgsgddb");
+        adminDashboardPage.cityDropDownLink.click();
+        ReusableMethods.bekle(1);
+        actions.sendKeys(Keys.PAGE_DOWN);
+        ReusableMethods.bekle(1);
+        WebElement city = adminDashboardPage.citySelectedLink;
+        js.executeScript("arguments[0].click();", city);
+        adminDashboardPage.postalCodeTextBox.sendKeys("34567");
+
+    }
+
+    @Then("presses the save button and sees that the address it just added has been added.")
+    public void pressesTheSaveButtonAndSeesThatTheAddressItJustAddedHasBeenAdded() {
+        adminDashboardPage.saveButton.click();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(adminDashboardPage.newAddressText.isDisplayed());
     }
 }
