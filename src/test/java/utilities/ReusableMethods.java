@@ -173,4 +173,32 @@ public class ReusableMethods {
         js.executeScript("window.scrollBy(0,"+pixel+")", "");
     }
 
+    // Salih-elemana kadar scroll  :D
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    // Salih- Scroll into view with JS. (USEFULL)
+    public static void scrollIntoViewJS(WebElement element) {
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        jsexecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static void loginMethod(String url,String userName,String password) {
+        HomePage home=new HomePage();
+        LoginPage loginPage=new LoginPage();
+
+        Driver.getDriver().get(ConfigReader.getProperty(url));
+        ReusableMethods.bekle(3);
+        try {
+            home.newsletterSubscribeCloseButton.click();
+        } catch (Exception e) {
+        }
+        home.loginLink.click();
+        loginPage.emailAdressBox.sendKeys(ConfigReader.getProperty(userName));
+        loginPage.passwordBox.sendKeys(ConfigReader.getProperty(password));
+        ReusableMethods.jsClick(loginPage.signInButton);
+        ReusableMethods.bekle(2);
+    }
+
 }

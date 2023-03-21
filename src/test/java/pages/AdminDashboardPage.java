@@ -18,7 +18,7 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//button[@id='sign_in_btn']")
     public WebElement adminSignInButton;
 
-    @FindBy(xpath = "(//*[text()='Products'])[1]")
+    @FindBy(xpath = "//span[normalize-space()='Products']")
     public WebElement productsLink;
 
     @FindBy(xpath = "//*[text()='Product List']")
@@ -151,13 +151,16 @@ public class AdminDashboardPage {
     @FindBy(xpath = "(//input[@placeholder='Search...'])[4]")
     public WebElement citySearchTextBox;
 
+    @FindBy(xpath = "//li[text()='Aberdeen']")
+    public WebElement citySelectedLink;
+
     @FindBy(xpath = "//input[@placeholder='Postal code']")
     public WebElement postalCodeTextBox;
 
     @FindBy(xpath = "(//button[text()='Save'])[3]")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//tbody/tr[2]/td[2]")
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]")
     public WebElement newAddressText;
 
 
@@ -226,6 +229,118 @@ public class AdminDashboardPage {
 
     @FindBy(xpath = "//span[text()='Support Ticket']")
     public WebElement supportTicketDropdownMenu;
+
+
+
+
+
+    // salih US-34/TC 11-31 arası
+    @FindBy(xpath = "//a[normalize-space()='Add New Product']")
+    public WebElement addNewProductLink;
+    @FindBy(xpath = "//a[@id='add_new_unit']")
+    public WebElement addNewUnitButton;
+    @FindBy(xpath = "//a[normalize-space()='']")
+    public WebElement addNewUnitSaveButton; // Bug!! Tuş çalışmıyor
+
+    @FindBy(xpath = "//input[@id='product_name']")
+    public WebElement productNameBoxElment;
+
+    @FindBy(xpath = "(//p[.='Active'])[3]")
+    public WebElement statusActiveElement;
+
+    @FindBy(xpath = "//form[@id='create_unit_form']//button[@class='primary_btn_2 mt-2'][normalize-space()='Save']")
+    public WebElement saveStatusButton;
+
+    @FindBy(xpath = "//input[@id='weight']")
+    public WebElement physicalWeight ;
+
+    @FindBy(xpath = "//input[@id='length']")
+    public WebElement physicalLength ;
+
+    @FindBy(xpath = "//input[@id='single_stock']")
+    public WebElement productStockElement ;
+
+    @FindBy(xpath = "//input[@id='selling_price']")
+    public WebElement priceElement;
+
+    @FindBy(xpath = "//input[@id='meta_image_file']")
+    public WebElement productPhotoBrowseBox;
+
+    @FindBy(xpath = "//input[@id='meta_image_file']")
+    public WebElement metaimageButton;
+    @FindBy(xpath = "//div[@class='modal-dialog modal_1688px modal-dialog-centered']//i[contains(@class,'ti-close')]")
+    //div[@class='modal-dialog modal_1688px modal-dialog-centered']//i[contains(@class,'ti-close')]
+    public WebElement selectPhotoFileClose;
+
+    @FindBy(xpath = "(//div[@class='img-box'])[1]")
+    public WebElement firstImageElement;
+
+    @FindBy(xpath = "//button[normalize-space()='Add files']")
+    public WebElement addPhotoFilesButton;
+
+    @FindBy(xpath = "//div[@class='alert alert-warning mt-30 text-center']")
+    public WebElement remindingMassageElement ;
+
+    @FindBy(xpath = "//button[@class='primary_btn_2 mt-5 text-center saveBtn']")
+    public WebElement saveAddedProductInformation ;
+
+//    @FindBy(xpath = "//input[@id='search']")
+//    public WebElement registeredProductSearchElement; // websitedeki search
+
+    @FindBy(xpath = "//a[@id='2']")
+    public WebElement relatedProductLink;
+
+    @FindBy(xpath = "//input[@id='rsearch_products']")
+    public WebElement relatedProductquickSearchBox;
+
+    @FindBy(xpath = "(//*[text()='Pabuch'])[1]")
+    public WebElement pabuchElement;
+
+    @FindBy(id = "/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/form[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]")
+    public WebElement pabuchAssertionElement;
+
+
+    @FindBy(xpath = "//div[@id='related_product']//th[contains(text(),'Name')]")
+    public WebElement relatedproductListColumnName;
+
+    @FindBy(xpath = "//div[@id='upsale_products']//th[contains(text(),'Name')]")
+    public WebElement upSaleListColumnName;
+
+    @FindBy(xpath = "//div[@id='upsale_products']//div[@id='product_list_div']//table[@class='table']//thead//tr//th//span[@class='checkmark']")
+    public WebElement upSaleRadioButton;
+
+
+
+    @FindBy(xpath = "//div[@class='alert alert-warning mt-30 text-center']")
+    public WebElement remaindingMessageRelatedProduct;
+
+    @FindBy(xpath = "//button[@class='primary_btn_2 mt-5 text-center saveBtn']")
+    public WebElement saveRelatedProductButton;
+
+
+    @FindBy(xpath = "//a[@id='3']")
+    public WebElement upSaleLink;
+
+    @FindBy(xpath = "//input[@id='upsale_search_products']")
+    public WebElement upsaleQuickSearchBox;
+
+
+
+    @FindBy(xpath="//span[normalize-space()='2']")
+    public WebElement switchBetweenPages;
+
+    @FindBy(xpath = "//a[@id='4']")
+    public WebElement crossSaleLink;
+
+    @FindBy(xpath = "//input[@id='crosssale_search_products']")
+    public WebElement crossSaleQuickSearchBox;
+
+
+
+
+
+
+
 
 
 
@@ -387,6 +502,8 @@ public class AdminDashboardPage {
 
 
 
+
+
     //=====================Faruk's locator zone===========================\\
 
 
@@ -443,10 +560,51 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//div[@class='Notification_body']")
     public WebElement adminNotificationBody;
 
+    @FindBy(xpath = "//div[@class='Notification_body']")
+    public WebElement adminNotificationSettingbutton;
+
+    @FindBy(xpath = "//h3[@class='mb-0 mr-30 mb_xs_15px mb_sm_20px']")
+    public WebElement adminPersonaNotificationSettingText;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[2]/label[1]/span[1]")
+    public WebElement adminPersonaNotificationSettingType;
+
+    @FindBy(xpath = "//div[@class='toast-title']")
+    public WebElement adminPersonaNotificationSettingTypeActifed;
+
+    @FindBy(xpath = "//input[@id='search']")
+    public WebElement adminDashboardSearchBox;
+
+    @FindBy(xpath = "//h3[@class='mb-0 mr-3 text-nowrap']")
+    public WebElement adminDashboardSummaryText;
+
+    @FindBy(xpath = "//div[contains(@class,'collaspe_icon')]//i[@class='ti-menu']")
+    public WebElement adminDashboardMenuIcon;
+
+    @FindBy(xpath = "//div[@class='nav_title']//span[contains(text(),'Dashboard')]")
+    public WebElement adminDashboardLink;
+
+    @FindBy(xpath = "//a[@class='primary-btn white mr-10 tab_hide']")
+    public WebElement adminDashboardWebSiteLink;
+
+    @FindBy(xpath = "//h1[@class='gradient-color2 total_visitors']")
+    public WebElement adminDashboarvisitorText;
+
+    @FindBy(xpath = "//a[@class='nav-link filtering active']")
+    public WebElement adminDashboardTodaybutton;
+
+    @FindBy(xpath = "//a[normalize-space()='This Week']")
+    public WebElement adminDashboardThisWeekbutton;
+
+    @FindBy(xpath = "//a[normalize-space()='This Month']")
+    public WebElement adminDashboardThisMonthbutton;
+
+    @FindBy(xpath = "//a[normalize-space()='This Year']")
+    public WebElement adminDashboardThisYearbutton;
 
 
-
-
+    @FindBy(xpath = "//div[@class='col-xl-3 col-lg-4 col-md-4 col-sm-6']")
+    public List<WebElement> adminDashboardVisitorbuttons;
 
 
 }

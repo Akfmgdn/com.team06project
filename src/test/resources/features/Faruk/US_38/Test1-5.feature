@@ -1,3 +1,4 @@
+@far
 Feature:As an administrator, I would like to have a page where I can see reports about keywords used on the site.
 
 

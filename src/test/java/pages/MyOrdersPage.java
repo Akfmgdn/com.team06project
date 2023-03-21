@@ -36,11 +36,11 @@ public class MyOrdersPage {
     public WebElement orderAmount;
 
     //https://qa.trendlifebuy.com/my-purchase-orders>Cancel order Button
-    @FindBy(xpath = "//a[text()='Cancel Order']")
+    @FindBy(xpath = "//a[normalize-space()='Cancel Order']")
     public WebElement cancelOrderButton;
 
     //https://qa.trendlifebuy.com/my-purchase-orders>Cancel reason window title
-    @FindBy()
+    @FindBy(xpath = "//label[@class='primary_label2 style4']")
     public WebElement cancelReasonWindowLabel;
 
     //https://qa.trendlifebuy.com/my-purchase-orders>Reason Box

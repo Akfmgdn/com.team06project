@@ -23,19 +23,17 @@ public class DashboardPage {
         public WebElement userEmailText;
 
     @FindBy(xpath ="//a[normalize-space()='Purchase History'] ")
-        public WebElement purchaseHistory;
+        public WebElement purchaseHistoryLink;
 
     @FindBy(xpath ="//h4[@class='font_30 f_w_700 secondary_text mb_25'] ")
         public WebElement totalBalanceElementi;
 
-
-
     @FindBy(xpath ="//span[@class='font_14 f_w_700 secondary_text text-uppercase'] ")
         public WebElement rechargeWalletElement;
 
-    @FindBy(xpath ="//span[@class='font_14 f_w_700 secondary_text text-uppercase'] ")
+    @FindBy(css = "#recharge_amount")
         public WebElement rechargeAmountElement;
-    @FindBy(xpath ="//span[@class='font_14 f_w_700 secondary_text text-uppercase'] ")
+    @FindBy(xpath ="//button[.='Add Fund']")
         public WebElement addFundElement;
 
     @FindBy(xpath ="//h4[@class='font_16 f_w_700 mb_20'] ")
@@ -45,11 +43,48 @@ public class DashboardPage {
         public WebElement seeAllPurchaseElement;
     @FindBy(xpath ="(//a[@class='amaz_badge_btn2 text-uppercase'])[1]")
         public WebElement seeAllMyWishListElement;
-    @FindBy(xpath ="((//a[@class='amaz_badge_btn2 text-uppercase'])[2]")
+    @FindBy(xpath ="(//a[@class='amaz_badge_btn2 text-uppercase'])[2]")
         public WebElement seeAllRecentOrderElement;
 
-    @FindBy(xpath ="(//a[@class='amaz_badge_btn2 text-uppercase'])[3]")
+    @FindBy(xpath ="//span[@id='remove_cart_sidebar']//i[@class='ti-close']")
+        public WebElement removeCartSidebar;
+
+    @FindBy(xpath ="//a[@href='https://qa.trendlifebuy.com/cart'][normalize-space()='See All']")
         public WebElement seeAllProductInChartElement;
+
+    @FindBy(xpath = "//a[contains(text(),'Dashboard')]")
+        public WebElement dashboardElement;
+    @FindBy(xpath = "//a[normalize-space()='Purchase History']")
+        public WebElement PurchaseHistoryElement;
+
+    @FindBy(xpath = "//a[normalize-space()='My Wishlist']")
+        public WebElement myWishListLink;
+    @FindBy(css = "div[class='amazy_dashboard_area dashboard_bg section_spacing6'] li:nth-child(2) a:nth-child(1)")
+        public WebElement myOrderLink;
+
+    @FindBy(css= "giftcard")
+         public WebElement giftcardLink;
+
+    @FindBy(xpath = "//a[normalize-space()='My Wallet']")
+            public WebElement myWalletLink;
+
+    @FindBy(xpath = "//a[normalize-space()='My Coupons']")
+        public WebElement myCouponsLink;
+
+    @FindBy(xpath = "//a[normalize-space()='Refund & Dispute']")
+        public WebElement refundAndDisputeLink;
+
+    @FindBy(xpath = "//a[contains(text(),'My Account')]")
+    public WebElement myAccountLink;
+
+    @FindBy(xpath = "//a[normalize-space()='Digital Products']")
+    public WebElement digitalProductsLink;
+
+    @FindBy(xpath = "//a[contains(text(),'Referral')]")
+    public WebElement referralLink;
+
+    @FindBy(xpath = "//a[normalize-space()='Support Ticket']")
+        public WebElement supportTicketLink;
 
 
 

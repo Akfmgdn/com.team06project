@@ -25,10 +25,10 @@ Feature:Dashboard test
 
 
   Scenario: Verify that the information in the Basic Info tab is the user's information.
-    And Verify that the information is the same as the user's information "Custumer133" and "user006@trendlifebuy.com"
+    And Verify that the information is the same as the user's information "Custumer133" and "user133@trendlifebuy.com"
 
 
-
+ @far
   Scenario Template: It should be verified that the profile can be updated by entering information in the TextBoxes in the Basic Info tab.
     And change the information in the TextBoxes "<firstname>", "<lastname>", "<email>","<phone>","<dateOfBirth>" and "<description>"
     When click on the update button
