@@ -209,4 +209,14 @@ public class HomePage {
     @FindBy(xpath = "(//a[@id='wishlistbtn_8'])[1]")
     public WebElement addToWishlistPopupButton;
 
+    @FindBy(xpath = "//div[@id='best_deals']//div[6]//div[1]//div[1]//div[1]//a[1]//i[1]")
+    public WebElement productCompareLink;
+
+    @FindBy(xpath = "//div[contains(@class,'owl-item active')]//img[contains(@title,'Casual Sun Glass')]")
+    public WebElement akifFirstproductLink;
+
+    @FindBy(xpath = "//div[contains(@class,'owl-item active')]//img[contains(@title,'HP 15s-gr515AU AMD Athlon 3050U 15.6\" HD Laptop')]")
+    public WebElement akifSecondproductLink;
+
+
 }

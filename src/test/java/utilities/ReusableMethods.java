@@ -184,4 +184,21 @@ public class ReusableMethods {
         jsexecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public static void loginMethod(String url,String userName,String password) {
+        HomePage home=new HomePage();
+        LoginPage loginPage=new LoginPage();
+
+        Driver.getDriver().get(ConfigReader.getProperty(url));
+        ReusableMethods.bekle(3);
+        try {
+            home.newsletterSubscribeCloseButton.click();
+        } catch (Exception e) {
+        }
+        home.loginLink.click();
+        loginPage.emailAdressBox.sendKeys(ConfigReader.getProperty(userName));
+        loginPage.passwordBox.sendKeys(ConfigReader.getProperty(password));
+        ReusableMethods.jsClick(loginPage.signInButton);
+        ReusableMethods.bekle(2);
+    }
+
 }
