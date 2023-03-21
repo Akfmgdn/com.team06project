@@ -97,4 +97,50 @@ public class US_029_stepdefinitions {
 
 
     }
+
+    @And("It is tested that when the Visitor, Total Order, Total Pending Order, Total Completed Order, Active Customer, Total Subscriber buttons are clicked, they redirect to the relevant pages.")
+    public void itIsTestedThatWhenTheVisitorTotalOrderTotalPendingOrderTotalCompletedOrderActiveCustomerTotalSubscriberButtonsAreClickedTheyRedirectToTheRelevantPages() {
+
+        List<WebElement> visitorButtonsList=adminDashboardPage.adminDashboardVisitorbuttons;
+        List<String> hepsiList=new ArrayList<>();
+        int sayac=0;
+        boolean x=false;
+        String[] hepsiArr={"Visitor",
+                "TotalOrder",
+                "TotalPendingOrder",
+                "TotalCompletedOrder",
+                "TotalSale",
+                "TotalReview",
+                "TodayRevenue",
+                "ActiveCustomer",
+                "TotalSubscriber"};
+        for (WebElement each:visitorButtonsList
+             ) {
+            String sayilarStr=each.getText();
+            String temizStr=sayilarStr.replaceAll("[^a-zA-Z]", "");
+            hepsiList.add(temizStr);
+            System.out.println(temizStr);
+        }
+        for (int i = 0; i < hepsiArr.length; i++) {
+            if (hepsiList.contains(hepsiArr[i])){
+                sayac++;
+            }
+        }
+        if (sayac==9){
+            x=true;
+        }
+        softAssert.assertTrue(x);
+
+    }
 }
+/*
+{"Visitor",
+"TotalOrder",
+"TotalPendingOrder",
+"TotalCompletedOrder",
+"TotalSale",
+"TotalReview",
+"TodayRevenue",
+"ActiveCustomer",
+"TotalSubscriber"}
+ */

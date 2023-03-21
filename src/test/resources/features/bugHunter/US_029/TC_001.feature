@@ -1,6 +1,6 @@
 
 Feature:US_029 As an administrator, I would like to have an admin panel to access site data, edit the site, and respond to customer requests.
-@bugHunter
+
   Scenario:TC_001 Verify that the URL of the admin panel is accessible.
 
     And admin goes to homepage

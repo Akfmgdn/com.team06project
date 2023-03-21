@@ -474,6 +474,8 @@ public class AdminDashboardPage {
 
 
 
+
+
     //=====================Faruk's locator zone===========================\\
 
 
@@ -573,6 +575,8 @@ public class AdminDashboardPage {
     public WebElement adminDashboardThisYearbutton;
 
 
+    @FindBy(xpath = "//div[@class='col-xl-3 col-lg-4 col-md-4 col-sm-6']")
+    public List<WebElement> adminDashboardVisitorbuttons;
 
 
 }
