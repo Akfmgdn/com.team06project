@@ -196,10 +196,10 @@ public class StepDefLogin {
     public void sayfayiKapatir() {
         Driver.getDriver().quit();
     }
-
-
-
 }
+
+
+
 
 
 

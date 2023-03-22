@@ -113,7 +113,7 @@ public class US_15 {
     @And("Click the See All button on the Product in Cart board")
     public void clickTheSeeAllButtonOnTheProductInCartBoard() {
         ReusableMethods.waitForVisibility(dashboardPage.seeAllProductInChartElement,3);
-        dashboardPage.removeCartSidebar.click();
+        //dashboardPage.removeCartSidebar.click();
 
         //dashboardPage.seeAllProductInChartElement.click();
 
@@ -122,95 +122,111 @@ public class US_15 {
     }
     @Then("verify that it redirects the user to the Cart page.")
     public void verifyThatItRedirectsTheUserToTheCartPage() {
-        //ReusableMethods.jsClick(dashboardPage.seeAllProductInChartElement);
-        ReusableMethods.bekle(3);
+        dashboardPage.removeCartSidebar.click();
+        ReusableMethods.jsClick(dashboardPage.seeAllProductInChartElement);
+        //ReusableMethods.bekle(3);
         //dashboardPage.seeAllProductInChartElement.click();
-        //String expectedUrl = "https://qa.trendlifebuy.com/my-purchase-orders";
+        String expectedUrl = "https://qa.trendlifebuy.com/my-purchase-orders";
         //Assert.assertEquals(expectedUrl,Driver.getDriver().getCurrentUrl());
-        //Driver.getDriver().navigate().back();
+       // Driver.getDriver().navigate().back();
     }
     @Given("click on the dashboard link")
     public void clickOnTheDashboardLink() {
         ReusableMethods.waitForVisibility(dashboardPage.dashboardElement,3);
         dashboardPage.dashboardElement.click();
         ReusableMethods.scrollDownByPixel(350);
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
     }
 
     @Given("click Purchase History link")
     public void clickPurchaseHistoryLink() {
         dashboardPage.purchaseHistoryLink.click();
         ReusableMethods.scrollDownByPixel(350);
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
     }
     @And("click My Wishlist")
     public void clickMyWishlist() {
         dashboardPage.myWishListLink.click();
-        ReusableMethods.scrollDownByPixel(350);
-        ReusableMethods.bekle(2);
+        ReusableMethods.scrollDownByPixel(450);
+        ReusableMethods.bekle(3);
     }
     @Then("click My Order")
     public void clickMyOrder() {
         dashboardPage.myOrderLink.click();
         ReusableMethods.scrollDownByPixel(350);
-        ReusableMethods.bekle(2);
+
 
     }
     @And("click Giftcard")
     public void clickGiftcard() {
-        ReusableMethods.jsClick(dashboardPage.giftcardLink);
+        ReusableMethods.bekle(3);
         ReusableMethods.scrollDownByPixel(350);
-        ReusableMethods.bekle(2);
+        ReusableMethods.jsClick(dashboardPage.giftcardLink);
+        //dashboardPage.giftcardLink.click();
+        //ReusableMethods.jsClick(dashboardPage.giftcardLink);
+
+        ReusableMethods.bekle(3);
 
     }
+
+
     @And("click My Wallet")
     public void clickMyWallet() {
-        dashboardPage.myWalletLink.click();
+        //dashboardPage.myWalletLink.click();
+        ReusableMethods.jsClick(dashboardPage.myWalletLink);
         ReusableMethods.scrollDownByPixel(350);
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
 
     }
 
     @And("click My Cupons linke")
     public void clickMyCuponsLink() {
-        dashboardPage.myCouponsLink.click();
+      //  dashboardPage.myCouponsLink.click();
+        ReusableMethods.jsClick(dashboardPage.myCouponsLink);
         ReusableMethods.scrollDownByPixel(350);
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
 
     }
     @And("click Refund & Disputee")
     public void clickRefundDispute() {
-        dashboardPage.refundAndDisputeLink.click();
+     // dashboardPage.refundAndDisputeLink.click();
+        ReusableMethods.jsClick(dashboardPage.refundAndDisputeLink);
         ReusableMethods.scrollDownByPixel(350);
         ReusableMethods.bekle(2);
     }
     @And("click My Accounte")
     public void clickMyAccounte() {
-        dashboardPage.myAccountLink.click();
+        //dashboardPage.myAccountLink.click();
+        ReusableMethods.jsClick(dashboardPage.myAccountLink);
         ReusableMethods.scrollDownByPixel(350);
         ReusableMethods.bekle(2);
     }
     @And("click Digital Productse")
     public void clickDigitalProductse() {
-        dashboardPage.digitalProductsLink.click();
+        //dashboardPage.digitalProductsLink.click();
+        ReusableMethods.jsClick(dashboardPage.digitalProductsLink);
         ReusableMethods.scrollDownByPixel(350);
         ReusableMethods.bekle(2);
     }
     @And("click Referrale")
     public void clickReferrale() {
-        dashboardPage.referralLink.click();
+        //dashboardPage.referralLink.click();
+        ReusableMethods.jsClick(dashboardPage.referralLink);
         ReusableMethods.scrollDownByPixel(350);
         ReusableMethods.bekle(2);
     }
     @And("click Support Tickete")
     public void clickSupportTickete() {
-        dashboardPage.supportTicketLink.click();
+        //dashboardPage.supportTicketLink.click();
+        ReusableMethods.jsClick(dashboardPage.supportTicketLink);
         ReusableMethods.scrollDownByPixel(350);
         ReusableMethods.bekle(2);
+
     }
 
     @And("Verify that it redirects to the relevant page")
     public void verifyThatItRedirectsToTheRelevantPage() {
+
 
     }
 

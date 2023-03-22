@@ -296,7 +296,7 @@ public class AdminDashboardPage {
     @FindBy(xpath = "(//*[text()='Pabuch'])[1]")
     public WebElement pabuchElement;
 
-    @FindBy(id = "/html[1]/body[1]/div[2]/div[1]/section[1]/div[1]/form[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]")
+    @FindBy(xpath="(//table/tbody/tr[1]/td[1])[1]")
     public WebElement pabuchAssertionElement;
 
 

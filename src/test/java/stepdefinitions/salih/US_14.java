@@ -21,7 +21,8 @@ public class US_14 {
     }
     @And("click About us link")
     public void setAboutUsPage() {
-        ReusableMethods.waitForVisibility(aboutUsPage.aboutUsLabel,30);        aboutUsPage.aboutUsLabel.click();
+        ReusableMethods.waitForVisibility(aboutUsPage.aboutUsLabel,30);
+        aboutUsPage.aboutUsLabel.click();
     }
     @Then("verify that the About us page is visible")
     public void verifyThatTheAboutUsPageIsVisible() {
