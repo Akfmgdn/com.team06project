@@ -59,10 +59,11 @@ public class DashboardPage {
 
     @FindBy(xpath = "//a[normalize-space()='My Wishlist']")
         public WebElement myWishListLink;
-    @FindBy(css = "div[class='amazy_dashboard_area dashboard_bg section_spacing6'] li:nth-child(2) a:nth-child(1)")
+    @FindBy(xpath = "//a[normalize-space()='My Order']")
         public WebElement myOrderLink;
 
-    @FindBy(css= "giftcard")
+    //@FindBy(xpath= "//a[normalize-space()='Giftcard']")
+    @FindBy(xpath= "(//div[@class='dashboard_sidebar_menuList']//ul//li)[5]")
          public WebElement giftcardLink;
 
     @FindBy(xpath = "//a[normalize-space()='My Wallet']")

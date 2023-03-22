@@ -1,8 +1,9 @@
+@slh
 Feature: As a user, I would like to have an About Us page on the site
   so that I can have more information about the site I shopped at
 
 
-  Scenario:TC_01 Clik About us and assert the required information
+  Scenario:TC_01 Click About us and assert the required information
     Given Go to homepage and Close the newsletter subscription form
     And click About us link
     Then verify that the About us page is visible
