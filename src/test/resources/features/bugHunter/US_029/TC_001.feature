@@ -37,7 +37,7 @@ Feature:US_029 As an administrator, I would like to have an admin panel to acces
   And  Enter valid Admin password
   And  clicks the sign in button
   And  When clicking on the Website bot on the Dashboard home page, it is tested that the site redirects to the user interface.
-  @bH
+
   Scenario:TC_006 When clicking the Today, This Week, This Mounth and This Year buttons on the Dashboard main page, it should be verified that the data on the Summary Board changes according to the selected value.
 
   And admin goes to homepage

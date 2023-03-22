@@ -3,16 +3,19 @@
 package stepdefinitions.hasan;
 
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import static utilities.Driver.getDriver;
 
 public class StepDefAdmin {
 
@@ -25,39 +28,48 @@ public class StepDefAdmin {
 
     MyOrdersPage myOrdersPage = new MyOrdersPage();
     OrderDetailPage orderDetailPage = new OrderDetailPage();
-    Actions action = new Actions(Driver.getDriver());
+    Actions action = new Actions(getDriver());
+
+    JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
 
-    @Given("qa.trendlifebuy.com\\/Admin\\/login anasayafaya gider")
-    public void qaTrendlifebuyComAdminLoginAnasayafayaGider() {
-        Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
+
+    @Given("trendlifebuy admin anasayfaya git")
+    public void trendlifebuy_admin_anasayfaya_git() {
+       Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
     }
 
-    @Given("ilk login girisi")
+    @Then("ilk login girisi")
     public void ilk_login_girisi() {
         AdminDashboardPage.loginButonMenu.click();
 
     }
     @Then("emailbox yazar")
     public void emailbox_yazar() {
-        AdminDashboardPage.adminEmailBox.sendKeys("admin048@trendlifebuy.com");
+        loginPage.emailAdressBox.sendKeys("admin048@trendlifebuy.com");
+
 
     }
     @Then("passwordBox yazar")
     public void password_box_yazar() {
-        AdminDashboardPage.adminPasswordBox.sendKeys("Trendlife123");
+        loginPage.passwordBox.sendKeys("Trendlife123");
 
     }
-    @Then("login butonuna click yapar")
-    public void login_butonuna_click_yapar() {
-        AdminDashboardPage.loginButonMenu.click();
+    @Then("login butonuna gider")
+    public void login_butonuna_gider() {
+        ReusableMethods.bekle(5);
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        loginPage.signInButton.click();
 
     }
 
     @Then("Products menusune clikc yapar")
     public void products_menusune_clikc_yapar() {
+      // ReusableMethods.jsClick(AdminDashboardPage.dashboardText);
+        ReusableMethods.bekle(10);
         AdminDashboardPage.dashboardtextLink.click();
         action.sendKeys(Keys.PAGE_DOWN);
+        ReusableMethods.bekle(10);
         AdminDashboardPage.productManageText.click();
         AdminDashboardPage.addNewProductDropDownMenu.click();
     }
@@ -65,6 +77,7 @@ public class StepDefAdmin {
 
     @Given("Product List, Alert List")
     public void product_list_alert_list() {
+        ReusableMethods.jsClick(AdminDashboardPage.productAlertListLink);
         AdminDashboardPage.productAlertListLink.click();
         Assert.assertTrue(AdminDashboardPage.productsListLink.isDisplayed());
     }
@@ -164,12 +177,6 @@ public class StepDefAdmin {
 
     }
 
-    @Then("sayfayi kapatir")
-    public void sayfayi_kapatir() {
-        Driver.getDriver().quit();
-
-
-    }
 
     @Given("Product Listi Quick Search arama yapar")
     public void product_listi_quick_search_arama_yapar() {
@@ -232,8 +239,40 @@ public class StepDefAdmin {
         AdminDashboardPage.productDescription1.isDisplayed();
         AdminDashboardPage.productDescription2.isDisplayed();
 
+    }
+
+    @Given("Related Product click yapilir checkbox click yapar sayfayi kaydeder yapar")
+    public void related_product_click_yapilir_checkbox_click_yapar_sayfayi_kaydeder_yapar() {
+        AdminDashboardPage.relatedProductText.click();
+        AdminDashboardPage.checkboxRelatedProduct.click();
+        action.sendKeys(Keys.END).perform();
+        AdminDashboardPage.saveRelatedProductButon.click();
 
     }
+    @Then("upsale textine click yapar checkboxlara click yapar sayfayi kaydeder")
+    public void upsale_textine_click_yapar_checkboxlara_click_yapar_sayfayi_kaydeder() {
+        AdminDashboardPage.upSaleLinkText.click();
+        AdminDashboardPage.checkBoxUpSale.click();
+        action.sendKeys(Keys.END).perform();
+        AdminDashboardPage.saveButonUpSale.click();
+
+    }
+    @Then("crossaletextine click yapar checkbox click yapar sayfa save yapilir")
+    public void crossaletextine_click_yapar_checkbox_click_yapar_sayfa_save_yapilir() {
+        AdminDashboardPage.crossSaleLinkText.click();
+        AdminDashboardPage.crossSaleCheckBox.click();
+        action.sendKeys(Keys.END).perform();
+        AdminDashboardPage.saveButonCrosSale.click();
+
+    }
+
+    @After
+    public void teardown (){
+        Driver.quitDriver();
+
+        }
+
+
 
 
 }

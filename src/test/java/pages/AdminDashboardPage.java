@@ -457,6 +457,36 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//*[text()='Meta Description']")
     public WebElement productDescription2;
 
+    @FindBy(xpath = "(//*[text()='Related Product'])[1]")
+    public WebElement relatedProductText;
+
+    @FindBy(xpath = "(//input[@type='checkbox'])[6]")
+    public WebElement checkboxRelatedProduct;
+
+    @FindBy(xpath = "//button[@data-value='only_save']")
+    public WebElement saveRelatedProductButon;
+
+    @FindBy(xpath = "(//*[text()='Up Sale'])[1]")
+    public WebElement upSaleLinkText;
+
+    @FindBy(xpath = "(//input[@type='checkbox'])[27]")
+    public WebElement checkBoxUpSale;
+
+    @FindBy(xpath = "//*[text()='Save']")
+    public WebElement saveButonUpSale;
+
+    @FindBy(xpath = "(//*[text()='Cross sale'])[1]")
+    public  WebElement crossSaleLinkText;
+
+    @FindBy(xpath = "(//input[@type='checkbox'])[48]")
+    public WebElement crossSaleCheckBox;
+
+    @FindBy(xpath = "//button[@data-value='only_save']")
+    public WebElement saveButonCrosSale;
+
+
+
+
 
 
 
@@ -573,6 +603,8 @@ public class AdminDashboardPage {
     public WebElement adminDashboardThisYearbutton;
 
 
+    @FindBy(xpath = "//div[@class='col-xl-3 col-lg-4 col-md-4 col-sm-6']")
+    public List<WebElement> adminDashboardVisitorbuttons;
 
 
 }
