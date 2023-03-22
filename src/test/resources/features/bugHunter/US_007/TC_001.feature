@@ -1,6 +1,6 @@
 
 Feature: US_007 As a user, I want to be able to register on the site in order to benefit from the functions of the site.
-
+  @vip53
   Scenario:TC_01 It should be verified that it is on the Sign Up page.
 
    And trendlifebuy goes to homepage
